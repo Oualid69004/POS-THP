@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27fbdc0b-9971-47be-a333-700f80f0bfea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/.idea/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/.idea/Airbnb.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/app/models/city.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/app/models/dog.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/app/models/dogsitter.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/app/models/stroll.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/db/migrate/20191024203634_create_dogsitters.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/db/migrate/20191024203653_create_dogs.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/db/migrate/20191024203750_create_strolls.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/db/migrate/20191024204756_create_cities.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/db/schema.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/fixtures/cities.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/fixtures/dogs.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/fixtures/dogsitters.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/fixtures/strolls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/models/city_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/models/dog_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/models/dogsitter_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Airbnb/test/models/stroll_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/Reserve_ton_docteur /.idea/Reserve_ton_docteur .iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/airbnpproject/.idea/airbnpproject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/film/.idea/film.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/movie/.idea/movie.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/test_model/.idea/test_model.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/.idea/the_gossip_project_sinatra.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/config.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/db/gossip.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/lib/controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/lib/gossip.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/lib/views/index.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/lib/views/new_gossip.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/the_gossip_project_sinatra/lib/views/show.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/.idea/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/.ruby-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/Rakefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/assets/config/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/assets/images/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/assets/stylesheets/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/channels/application_cable/channel.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/channels/application_cable/connection.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/controllers/application_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/controllers/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/helpers/application_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/jobs/application_job.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/mailers/application_mailer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/models/application_record.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/models/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/views/layouts/application.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/views/layouts/mailer.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/app/views/layouts/mailer.text.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/rails" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/rake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/spring" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/bin/yarn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/application.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/boot.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/cable.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/credentials.yml.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/database.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/environment.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/environments/development.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/environments/production.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/environments/test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/application_controller_renderer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/assets.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/backtrace_silencers.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/content_security_policy.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/cookies_serializer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/filter_parameter_logging.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/inflections.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/mime_types.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/initializers/wrap_parameters.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/locales/en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/puma.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/routes.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/spring.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/config/storage.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/db/seeds.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/lib/assets/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/lib/tasks/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/log/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/422.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/apple-touch-icon-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/storage/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/application_system_test_case.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/controllers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/fixtures/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/fixtures/files/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/helpers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/integration/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/mailers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/models/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/system/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/test/test_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/tmp/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine04_rails/untitled/vendor/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/CrudGossip.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/.ruby-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/Rakefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/config/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/images/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/javascripts/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/javascripts/cable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/javascripts/channels/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/assets/stylesheets/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/channels/application_cable/channel.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/channels/application_cable/connection.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/controllers/application_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/controllers/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/helpers/application_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/jobs/application_job.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/mailers/application_mailer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/models/application_record.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/models/city.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/models/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/models/gossip.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/models/user.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/views/layouts/application.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/views/layouts/mailer.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/app/views/layouts/mailer.text.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/rails" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/rake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/spring" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/bin/yarn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/config.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/db/migrate/20191030094550_create_gossips.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/db/migrate/20191030094600_create_users.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/db/migrate/20191030094613_create_cities.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/db/schema.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/db/seeds.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/lib/assets/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/lib/tasks/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/log/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/422.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/apple-touch-icon-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/storage/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/application_system_test_case.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/controllers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/fixtures/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/fixtures/cities.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/fixtures/files/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/fixtures/gossips.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/fixtures/users.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/helpers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/integration/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/mailers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/models/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/models/city_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/models/gossip_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/models/user_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/system/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/test/test_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/tmp/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/CrudGossip/vendor/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/ScaffoldProject/.idea/ScaffoldProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/lucas/llensi_gossip_front/.idea/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/lucas/llensi_gossip_front/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/lucas/llensi_gossip_front/.idea/llensi_gossip_front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.idea/my_gossip.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/my_gossip/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/.ruby-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/Rakefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/config/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/images/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/javascripts/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/javascripts/cable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/javascripts/channels/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/assets/stylesheets/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/channels/application_cable/channel.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/channels/application_cable/connection.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/controllers/application_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/controllers/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/helpers/application_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/jobs/application_job.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/mailers/application_mailer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/models/application_record.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/models/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/views/layouts/application.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/views/layouts/mailer.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/app/views/layouts/mailer.text.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/rails" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/rake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/spring" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/update" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/bin/yarn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/application.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/boot.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/cable.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/credentials.yml.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/database.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/environment.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/environments/development.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/environments/production.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/environments/test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/application_controller_renderer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/assets.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/backtrace_silencers.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/content_security_policy.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/cookies_serializer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/filter_parameter_logging.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/inflections.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/mime_types.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/initializers/wrap_parameters.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/locales/en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/puma.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/routes.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/spring.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/config/storage.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/db/seeds.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/lib/assets/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/lib/tasks/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/log/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/422.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/apple-touch-icon-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/storage/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/application_system_test_case.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/controllers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/fixtures/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/fixtures/files/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/helpers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/integration/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/mailers/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/models/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/system/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/test/test_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/tmp/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine05/untitled/vendor/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/.idea/test_action_mailer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/config/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/images/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/javascripts/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/javascripts/cable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/javascripts/channels/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/assets/stylesheets/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/channels/application_cable/channel.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/channels/application_cable/connection.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/controllers/application_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/controllers/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/helpers/application_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/jobs/application_job.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/mailers/application_mailer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/models/application_record.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/models/concerns/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/views/layouts/application.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/views/layouts/mailer.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/app/views/layouts/mailer.text.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/application.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/boot.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/cable.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/credentials.yml.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/database.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/environment.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/environments/development.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/environments/production.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/environments/test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/application_controller_renderer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/assets.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/backtrace_silencers.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/content_security_policy.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/cookies_serializer.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/filter_parameter_logging.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/inflections.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/mime_types.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/initializers/wrap_parameters.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/locales/en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/puma.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/routes.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/spring.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine06/test_action_mailer/config/storage.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine_01_introductionRuby/mes_exercices1/.idea/mes_exercices.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../semaine_03_POO/the_hacking_gossip_ruby_version_POO/.idea/the_hacking_gossip_ruby_version_POO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Semaine1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes-projet-thp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/.idea/mes_exercices.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex01.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex02.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex03.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex04.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex05.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex06.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex07.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex08.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex09.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex10.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex11.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex12.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex13.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex14.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex15.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/ex16.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/exo20.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/exo21.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/mailinglistePair.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/youcef.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices1/youcefp.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/coucoutoi.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/fullpyramid.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/hello.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/lecombo.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/login.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/pyramidelosange.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/say_hello" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mes_exercices2/say_hello.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/capitalall.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/carredunnombre.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/filtre.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/getmidel.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/minmaxString.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/motlepluspetit.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/removeminumum.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/suprimvoyelle.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../methodeKata/voyelle.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exo-ruby-j7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sayhello.rb" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1UQ8siPXOu1LlxWkWPvVFbiGpwJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Rails.Development: THP_POS">
+    <configuration name="Development: THP_POS" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="THP_POS" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Production: THP_POS" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="THP_POS" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: THP_POS" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="THP_POS" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_VERBOSE" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: THP_POS" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="THP_POS" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_VERBOSE" VALUE="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27fbdc0b-9971-47be-a333-700f80f0bfea" name="Default Changelist" comment="" />
+      <created>1575277666715</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575277666715</updated>
+      <workItem from="1575277668503" duration="127000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
