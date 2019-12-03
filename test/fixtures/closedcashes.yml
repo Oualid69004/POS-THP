@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  money: MyString
+  host: MyString
+  hostsequence: MyString
+
+two:
+  money: MyString
+  host: MyString
+  hostsequence: MyString

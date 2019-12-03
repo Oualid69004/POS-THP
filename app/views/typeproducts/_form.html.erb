@@ -1,0 +1,22 @@
+<%= form_with(model: typeproduct, local: true) do |form| %>
+  <% if typeproduct.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(typeproduct.errors.count, "error") %> prohibited this typeproduct from being saved:</h2>
+
+      <ul>
+      <% typeproduct.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :line %>
+    <%= form.text_field :line %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @stocklevel.location %>
+</p>
+
+<p>
+  <strong>Stockmaximum:</strong>
+  <%= @stocklevel.stockmaximum %>
+</p>
+
+<p>
+  <strong>Stocksecurity:</strong>
+  <%= @stocklevel.stocksecurity %>
+</p>
+
+<%= link_to 'Edit', edit_stocklevel_path(@stocklevel) %> |
+<%= link_to 'Back', stocklevels_path %>

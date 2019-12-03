@@ -1,0 +1,32 @@
+<%= form_with(model: closedcash, local: true) do |form| %>
+  <% if closedcash.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(closedcash.errors.count, "error") %> prohibited this closedcash from being saved:</h2>
+
+      <ul>
+      <% closedcash.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :money %>
+    <%= form.text_field :money %>
+  </div>
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hostsequence %>
+    <%= form.text_field :hostsequence %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

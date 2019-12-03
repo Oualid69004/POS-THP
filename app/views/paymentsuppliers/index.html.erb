@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Paymentsuppliers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paymentnote</th>
+      <th>Paymentvalue</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paymentsuppliers.each do |paymentsupplier| %>
+      <tr>
+        <td><%= paymentsupplier.paymentNote %></td>
+        <td><%= paymentsupplier.paymentValue %></td>
+        <td><%= link_to 'Show', paymentsupplier %></td>
+        <td><%= link_to 'Edit', edit_paymentsupplier_path(paymentsupplier) %></td>
+        <td><%= link_to 'Destroy', paymentsupplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paymentsupplier', new_paymentsupplier_path %>

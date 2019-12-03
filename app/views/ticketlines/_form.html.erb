@@ -1,0 +1,52 @@
+<%= form_with(model: ticketline, local: true) do |form| %>
+  <% if ticketline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticketline.errors.count, "error") %> prohibited this ticketline from being saved:</h2>
+
+      <ul>
+      <% ticketline.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :attributes %>
+    <%= form.text_field :attributes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :line %>
+    <%= form.text_field :line %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taxid %>
+    <%= form.text_field :taxid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unitCost %>
+    <%= form.text_field :unitCost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :units %>
+    <%= form.text_field :units %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unitsRefund %>
+    <%= form.text_field :unitsRefund %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

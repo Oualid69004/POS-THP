@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @closedcash.money %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @closedcash.host %>
+</p>
+
+<p>
+  <strong>Hostsequence:</strong>
+  <%= @closedcash.hostsequence %>
+</p>
+
+<%= link_to 'Edit', edit_closedcash_path(@closedcash) %> |
+<%= link_to 'Back', closedcashes_path %>

@@ -1,0 +1,22 @@
+<%= form_with(model: stockin, local: true) do |form| %>
+  <% if stockin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stockin.errors.count, "error") %> prohibited this stockin from being saved:</h2>
+
+      <ul>
+      <% stockin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

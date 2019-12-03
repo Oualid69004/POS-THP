@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discountPer: MyString
+  discountVal: MyString
+  payment: MyString
+  total: 1.5
+  transid: MyString
+
+two:
+  discountPer: MyString
+  discountVal: MyString
+  payment: MyString
+  total: 1.5
+  transid: MyString

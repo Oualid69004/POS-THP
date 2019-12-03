@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pricesell: MyString
+  pricebuy: MyString
+  stockvolume: 1.5
+  reference: MyString
+  stockcost: 1.5
+
+two:
+  name: MyString
+  pricesell: MyString
+  pricebuy: MyString
+  stockvolume: 1.5
+  reference: MyString
+  stockcost: 1.5

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idstockcurrent: MyString
+  cost: 1.5
+  total: 1.5
+  units: 1.5
+
+two:
+  idstockcurrent: MyString
+  cost: 1.5
+  total: 1.5
+  units: 1.5

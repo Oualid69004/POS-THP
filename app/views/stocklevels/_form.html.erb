@@ -1,0 +1,32 @@
+<%= form_with(model: stocklevel, local: true) do |form| %>
+  <% if stocklevel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stocklevel.errors.count, "error") %> prohibited this stocklevel from being saved:</h2>
+
+      <ul>
+      <% stocklevel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stockmaximum %>
+    <%= form.text_field :stockmaximum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stocksecurity %>
+    <%= form.text_field :stocksecurity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
