@@ -36,7 +36,7 @@ class RolepermissionsController < ApplicationController
         end
       end
     end
-    redirect_to root_path
+    redirect_to root_path, notice: 'Les permissions ont bien été prises en compte.'
   #  respond_to do |format|
   #    if @rolepermission.save
   #      format.html { redirect_to @rolepermission, notice: 'Rolepermission was successfully created.' }
