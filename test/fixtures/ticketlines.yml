@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attributes: MyString
+  line: MyString
+  price: 1.5
+  taxid: MyString
+  unitCost: 1.5
+  units: 1.5
+  unitsRefund: 1.5
+
+two:
+  attributes: MyString
+  line: MyString
+  price: 1.5
+  taxid: MyString
+  unitCost: 1.5
+  units: 1.5
+  unitsRefund: 1.5

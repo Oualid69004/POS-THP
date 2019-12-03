@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Attributes:</strong>
+  <%= @ticketline.attributes %>
+</p>
+
+<p>
+  <strong>Line:</strong>
+  <%= @ticketline.line %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ticketline.price %>
+</p>
+
+<p>
+  <strong>Taxid:</strong>
+  <%= @ticketline.taxid %>
+</p>
+
+<p>
+  <strong>Unitcost:</strong>
+  <%= @ticketline.unitCost %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @ticketline.units %>
+</p>
+
+<p>
+  <strong>Unitsrefund:</strong>
+  <%= @ticketline.unitsRefund %>
+</p>
+
+<%= link_to 'Edit', edit_ticketline_path(@ticketline) %> |
+<%= link_to 'Back', ticketlines_path %>

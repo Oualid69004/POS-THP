@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @businessline.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @businessline.description %>
+</p>
+
+<%= link_to 'Edit', edit_businessline_path(@businessline) %> |
+<%= link_to 'Back', businesslines_path %>

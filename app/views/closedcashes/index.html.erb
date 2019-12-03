@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Closedcashes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Money</th>
+      <th>Host</th>
+      <th>Hostsequence</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @closedcashes.each do |closedcash| %>
+      <tr>
+        <td><%= closedcash.money %></td>
+        <td><%= closedcash.host %></td>
+        <td><%= closedcash.hostsequence %></td>
+        <td><%= link_to 'Show', closedcash %></td>
+        <td><%= link_to 'Edit', edit_closedcash_path(closedcash) %></td>
+        <td><%= link_to 'Destroy', closedcash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Closedcash', new_closedcash_path %>

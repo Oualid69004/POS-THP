@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ticketlines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Line</th>
+      <th>Price</th>
+      <th>Taxid</th>
+      <th>Unitcost</th>
+      <th>Units</th>
+      <th>Unitsrefund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ticketlines.each do |ticketline| %>
+      <tr>
+        <td><%= ticketline.attributes %></td>
+        <td><%= ticketline.line %></td>
+        <td><%= ticketline.price %></td>
+        <td><%= ticketline.taxid %></td>
+        <td><%= ticketline.unitCost %></td>
+        <td><%= ticketline.units %></td>
+        <td><%= ticketline.unitsRefund %></td>
+        <td><%= link_to 'Show', ticketline %></td>
+        <td><%= link_to 'Edit', edit_ticketline_path(ticketline) %></td>
+        <td><%= link_to 'Destroy', ticketline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ticketline', new_ticketline_path %>

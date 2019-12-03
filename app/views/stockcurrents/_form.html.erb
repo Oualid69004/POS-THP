@@ -1,0 +1,37 @@
+<%= form_with(model: stockcurrent, local: true) do |form| %>
+  <% if stockcurrent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stockcurrent.errors.count, "error") %> prohibited this stockcurrent from being saved:</h2>
+
+      <ul>
+      <% stockcurrent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idstockcurrent %>
+    <%= form.text_field :idstockcurrent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :units %>
+    <%= form.text_field :units %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

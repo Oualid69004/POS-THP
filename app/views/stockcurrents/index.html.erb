@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stockcurrents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idstockcurrent</th>
+      <th>Cost</th>
+      <th>Total</th>
+      <th>Units</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stockcurrents.each do |stockcurrent| %>
+      <tr>
+        <td><%= stockcurrent.idstockcurrent %></td>
+        <td><%= stockcurrent.cost %></td>
+        <td><%= stockcurrent.total %></td>
+        <td><%= stockcurrent.units %></td>
+        <td><%= link_to 'Show', stockcurrent %></td>
+        <td><%= link_to 'Edit', edit_stockcurrent_path(stockcurrent) %></td>
+        <td><%= link_to 'Destroy', stockcurrent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stockcurrent', new_stockcurrent_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discount: MyString
+  status: MyString
+  ticketCost: MyString
+  ticketDate: 2019-12-02
+  ticketNumber: MyString
+  ticketTotal: 1.5
+  ticketid: MyString
+  tickettype: MyString
+
+two:
+  discount: MyString
+  status: MyString
+  ticketCost: MyString
+  ticketDate: 2019-12-02
+  ticketNumber: MyString
+  ticketTotal: 1.5
+  ticketid: MyString
+  tickettype: MyString

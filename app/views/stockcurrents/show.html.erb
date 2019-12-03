@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idstockcurrent:</strong>
+  <%= @stockcurrent.idstockcurrent %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @stockcurrent.cost %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @stockcurrent.total %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @stockcurrent.units %>
+</p>
+
+<%= link_to 'Edit', edit_stockcurrent_path(@stockcurrent) %> |
+<%= link_to 'Back', stockcurrents_path %>
