@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :screens
   resources :rolepermissions
   resources :roles
-  resources :employeebranches
+  #resources :employeebranches
   resources :employees
   resources :customers
   resources :suppliers
