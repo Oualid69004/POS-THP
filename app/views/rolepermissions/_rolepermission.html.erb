@@ -1,19 +1,11 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Permissions</h1>
-
+<%= form_tag(rolepermissions_path, method: :post)%>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <div class="dropdown mb-4">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-      </button>
-      <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div>
+    <h6>Select Role</h6>
+    <%= select_tag "role", options_from_collection_for_select(@roles, "id", "name"), class: "browser-default custom-select"%>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -33,16 +25,17 @@
         </tfoot>
         -->
         <tbody>
+          <% @screens.each do |screen| %>
           <tr>
-            <td>User</td>
-            <td>System</td>
+            <td><%= screen.name %></td>
+            <td><%= check_box_tag "screens[]", screen.id, false %></td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -60,6 +53,6 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
 
-<%= render 'form', rolepermission: @rolepermission %>
+<%= submit_tag "Create roleperm" %>
 
 <%= link_to 'Back', rolepermissions_path %>

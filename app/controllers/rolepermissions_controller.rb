@@ -14,6 +14,8 @@ class RolepermissionsController < ApplicationController
 
   # GET /rolepermissions/new
   def new
+    @roles = Role.all
+    @screens = Screen.all
     @rolepermission = Rolepermission.new
   end
 
@@ -24,17 +26,26 @@ class RolepermissionsController < ApplicationController
   # POST /rolepermissions
   # POST /rolepermissions.json
   def create
-    @rolepermission = Rolepermission.new(rolepermission_params)
-
-    respond_to do |format|
-      if @rolepermission.save
-        format.html { redirect_to @rolepermission, notice: 'Rolepermission was successfully created.' }
-        format.json { render :show, status: :created, location: @rolepermission }
-      else
-        format.html { render :new }
-        format.json { render json: @rolepermission.errors, status: :unprocessable_entity }
+    role = Role.find(params[:role])
+    @screens = Screen.all
+    params[:screens].each do |screen|
+      unless screen == nil
+        select_screen = Screen.find(screen)
+        unless role.screens.include?(select_screen)
+          Rolepermission.create(role: role, screen: select_screen)
+        end
       end
     end
+    redirect_to root_path
+  #  respond_to do |format|
+  #    if @rolepermission.save
+  #      format.html { redirect_to @rolepermission, notice: 'Rolepermission was successfully created.' }
+  #      format.json { render :show, status: :created, location: @rolepermission }
+  #    else
+  #      format.html { render :new }
+  #      format.json { render json: @rolepermission.errors, status: :unprocessable_entity }
+  #    end
+  #  end
   end
 
   # PATCH/PUT /rolepermissions/1
