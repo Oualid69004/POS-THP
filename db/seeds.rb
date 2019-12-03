@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
 screens = [
   "User",
   "Create user",
@@ -40,6 +41,7 @@ roles.each do |role|
      p 'Roles created'
  end
  10.times do |category|
+
     Category.create(
      name: Faker::Name.name,
      logo: Faker::Company.industry
@@ -93,6 +95,7 @@ end
          )
     puts " stockins created"
 end
+
 10.times do |stocklevels|
     Stocklevel.create(
         location: Faker::Address.building_number,
@@ -100,3 +103,4 @@ end
         stocksecurity: Faker::Number.between(from: 0, to: 5)         )
     puts " stocklevels created"
 end
+
