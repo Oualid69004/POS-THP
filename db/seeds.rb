@@ -6,27 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-screens = [
-  "User",
-  "Create user",
-  "Roles",
-  "Screens",
-  "Permissions",
-  "Companies",
-  "Branch",
-  "Business Lines",
-  "Products",
-  "Categories",
-  "Suppliers",
-  "Customs",
-  "Stock Management",
-  "Purshas",
-  "Sales"
-]
-
-screens.each do |screen|
-  Screen.create(
-    name: screen,
-    url: 'url',
-  )
-end
