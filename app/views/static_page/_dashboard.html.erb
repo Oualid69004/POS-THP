@@ -26,7 +26,7 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-      <% if current_user.is_admin == true %>
+      <% if current_user.role == 'admin' %>
       <!-- Heading -->
       <div class="sidebar-heading">
         Admin
@@ -42,9 +42,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Titre for security</h6>
             <a class="collapse-item" href="#">Users</a>
-            <a class="collapse-item" href="#">Screens</a>
-            <a class="collapse-item" href="#">Roles</a>
-            <a class="collapse-item" href="#">Permissions</a>
+            <a class="collapse-item" href="<%= screens_path %>">Screens</a>
+            <a class="collapse-item" href="<%= roles_path %>">Roles</a>
+            <a class="collapse-item" href="<%= new_rolepermission_path %>">Permissions</a>
             <a class="collapse-item" href="#">Create user</a>
           </div>
         </div>
@@ -104,7 +104,7 @@
             <a class="collapse-item" href="#">Stock Management</a>
             <a class="collapse-item" href="#">Purchas</a>
             <a class="collapse-item" href="#">Sales</a>
-            <% if current_user.is_admin == true %>
+            <% if current_user.role== 'admin' %>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">admin</h6>
             <a class="collapse-item" href="#">Edit Sales</a>
@@ -322,7 +322,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name %> <%= current_user.last_name %></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="<%= asset_path('profile.png') %>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

@@ -147,10 +147,12 @@ ActiveRecord::Schema.define(version: 2019_12_03_084138) do
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
+
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_roles_on_company_id"
+
   end
 
   create_table "screens", force: :cascade do |t|
