@@ -24,17 +24,14 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(customer_params)
-
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-        format.json { render :show, status: :created, location: @customer }
-      else
-        format.html { render :new }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
-    end
+    Customer.create(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      adress: params[:adress],
+      email: params[:email],
+      mobile: params[:mobile], 
+    )
+    redirect_to customers_path
   end
 
   # PATCH/PUT /customers/1

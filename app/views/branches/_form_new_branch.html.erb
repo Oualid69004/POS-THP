@@ -1,0 +1,13 @@
+<%= form_tag(branches_path, method: :post)%>
+  <div class="form-group">
+      <%= label_tag :name %><br />
+      <%= text_field_tag :name,  nil, class: "form-control form-control-user" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :address %><br />
+      <%= text_field_tag :address,  nil, class: "form-control form-control-user" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :phone_number %><br />
+      <%= telephone_field_tag :phone_number, nil, class: "form-control form-control-user" %>
+    </div>
