@@ -33,16 +33,16 @@ roles = ["admin","employee", "manager"]
 screens.each do |screen|
   Screen.create(
     name: screen,
-    url: ‘url’,
+    url: "url",
   )
-   p ‘screens created’
+   p "screens created"
 end
 
 roles.each do |role|
     Role.create(
       name: role,
     )
-     p ‘Roles created’
+     p "Roles created"
  end
 10.times do |category|
     Category.create(
@@ -108,3 +108,22 @@ end
         stocksecurity: Faker::Number.between(from: 0, to: 5)         )
     puts " stocklevels created"
 end
+
+10.times do |ticket|
+    Ticket.create(
+        ticket: Faker::Code.ean,
+        # receipt: Faker::Code.ean
+         )
+
+    puts " ticket created"
+end
+
+# 10.times do |receipt|
+#     Receipt.create(
+#         reference_receip: Faker::Code.ean,
+#         ticket: Faker::Code.ean
+
+#          )
+         
+#     puts " receipt created"
+# end

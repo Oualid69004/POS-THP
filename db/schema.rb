@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(version: 2019_12_03_084138) do
     t.index ["ticket_id"], name: "index_customers_on_ticket_id"
   end
 
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "apppassword"
+    t.string "address"
+    t.string "email"
+    t.string "image"
+    t.bigint "company_id"
+    t.bigint "role_id"
+    t.bigint "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_employees_on_company_id"
+    t.index ["role_id"], name: "index_employees_on_role_id"
+    t.index ["ticket_id"], name: "index_employees_on_ticket_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.string "discountPer"
     t.string "discountVal"
