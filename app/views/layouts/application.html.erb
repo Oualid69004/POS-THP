@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
+    <% unless current_page?('/static_page/new') || !user_signed_in? %>
     <div id="page-top">
 
       <!-- Page Wrapper -->
@@ -24,7 +24,11 @@
             <div class="sidebar-brand-icon rotate-n-15">
               <i class="fas fa-chart-pie"></i>
             </div>
-            <div class="sidebar-brand-text mx-3"><%= current_user.company.name %></div>
+            <% if current_user.company != nil %>
+              <div class="sidebar-brand-text mx-3"><%= current_user.company.name %></div>
+            <% else %>
+              <div class="sidebar-brand-text mx-3">no company</div>
+            <%end%>
           </a>
 
           <!-- Divider -->
