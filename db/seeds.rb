@@ -89,7 +89,43 @@ roles = ["admin","employee", "manager"]
     Paymentsupplier.create(
     paymentNote: Faker::Number.decimal(l_digits: 2),
     paymentValue: Faker::Number.decimal(l_digits: 2)
-
+    
     )
     puts "Paymentsupplier created"
+end
+
+10.times do |stockins|
+    Stockin.create(
+        total: Faker::Number.between(from: 0, to: 10000),
+         )
+    puts " stockins created"
+end
+10.times do |stocklevels|
+    Stocklevel.create(
+        location: Faker::Address.building_number,
+        stockmaximum: Faker::Number.between(from: 0, to: 1000),
+        stocksecurity: Faker::Number.between(from: 0, to: 5)
+         )
+    puts " stocklevels created"
+end
+10.times do |stockcurrents|
+    Stockcurrent.create(
+        cost: Faker::Number.between(from: 0, to: 100),
+        total: Faker::Number.between(from: 0, to: 50),
+        units: Faker::Number.between(from: 0, to: 50),
+        branch: Branch.find(rand(1..10))
+         )
+    puts "stockcurrents created"
+end
+10.times do |suppliers|
+    Supplier.create(
+        name: Faker::Name.name,
+        adress: Faker::Address.street_address,
+        email: Faker::Internet.email,
+        mobile: Faker::Number.leading_zero_number(digits: 10),
+        stockin: Stockin.find(rand(1..10)),
+        paymentsupplier: Paymentsupplier.find(rand(1..10)),
+        company: Company.find(rand(1..10))
+         )
+    puts "suppliers created"
 end
