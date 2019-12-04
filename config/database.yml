@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch(“RAILS_MAX_THREADS”) { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
   database: THP_POS_development
@@ -67,10 +67,10 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV[‘DATABASE_URL’] %>
+#     url: <%= ENV["DATABASE_URL"] %>
 #
 production:
   <<: *default
   database: THP_POS_production
   username: THP_POS
-  password: <%= ENV[‘THP_POS_DATABASE_PASSWORD’] %>
+  password: <%= ENV["THP_POS_DATABASE_PASSWORD"] %>
