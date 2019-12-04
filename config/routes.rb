@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_page#index'
-  devise_for :users
+  resources :static_page, only: [:new, :create]
+  devise_for :users, controllers: { registrations: "registrations" }
   resources :receipts
   resources :paymentsuppliers
   resources :payments
@@ -23,6 +24,6 @@ Rails.application.routes.draw do
   resources :businesslines
   resources :branches
   resources :companies
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require ‘faker’
+require 'faker'
 screens = [
   "User",
   "Create user",
@@ -28,15 +28,15 @@ roles = ["admin","employee", "manager"]
 screens.each do |screen|
   Screen.create(
     name: screen,
-    url: ‘url’,
+    url: 'url',
   )
-   p ‘screens created’
+   p 'screens created'
 end
  roles.each do |role|
     Role.create(
       name: role,
     )
-     p ‘Roles created’
+     p 'Roles created'
  end
 10.times do |category|
     Category.create(
