@@ -25,18 +25,15 @@ class SuppliersController < ApplicationController
   # POST /suppliers
   # POST /suppliers.json
   def create
-    @supplier = Supplier.new(supplier_params)
-
-    respond_to do |format|
-      if @supplier.save
-        format.html { redirect_to @supplier, notice: 'Supplier was successfully created.' }
-        format.json { render :show, status: :created, location: @supplier }
-      else
-        format.html { render :new }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
-      end
-    end
+    Supplier.create(
+      name: params[:name],
+      adress: params[:adress],
+      email: params[:email],
+      mobile: params[:mobile], 
+    )
+    redirect_to suppliers_path
   end
+ 
 
   # PATCH/PUT /suppliers/1
   # PATCH/PUT /suppliers/1.json
