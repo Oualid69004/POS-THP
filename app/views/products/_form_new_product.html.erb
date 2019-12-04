@@ -1,0 +1,31 @@
+<%= form_tag(products_path, method: :post)%>
+     <div class="form-group">
+        <%=label_tag :category %><br />
+        <%= select_tag :category, options_from_collection_for_select(@categories, "id", "name"), class: "browser-default custom-select"%>
+      </div>
+      <div class="form-group">
+        <%=label_tag :typeproduct %><br />
+        <%= select_tag :typeproduct, options_from_collection_for_select(@type_products, "id", "name"), class: "browser-default custom-select"%>
+      </div>
+  <div class="form-group">
+      <%= label_tag :name %><br />
+      <%= text_field_tag :name,  nil, placeholder: "Name of the product ", class: "form-control form-control-user" %>
+    </div>
+    <div class="form-group">
+        <%= label_tag :pricesell %><br />
+        <%= text_field_tag :pricesell,  nil, placeholder: "pricesell", class: "form-control form-control-user" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :pricebuy %><br />
+        <%= text_field_tag :pricebuy,  nil, placeholder: "pricebuy", class: "form-control form-control-user" %>
+      </div>
+        <div class="form-group">
+        <%= label_tag :stockvolume %><br />
+        <%= text_field_tag :stockvolume,  nil, placeholder: "stockvolume", class: "form-control form-control-user" %>
+      </div>
+      
+       
+       
+      
+      
+    
