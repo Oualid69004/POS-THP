@@ -47,7 +47,7 @@ end
 end
 10.times do |businessline|
     Businessline.create(
-     name:        Faker::Name.name,
+     name:        Faker::Company.industry,
      description: Faker::Company.type
          )
     puts "Businesslines created"
