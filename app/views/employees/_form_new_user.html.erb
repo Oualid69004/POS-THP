@@ -1,0 +1,24 @@
+<%= form_tag(employees_path, method: :post)%>
+  <div class="form-group">
+      <%= label_tag :first_name %><br />
+      <%= text_field_tag :first_name,  nil, placeholder: "Employee first name", class: "form-control form-control-user" %>
+    </div>
+    <div class="form-group">
+        <%= label_tag :last_name %><br />
+        <%= text_field_tag :last_name,  nil, placeholder: "Employee last name", class: "form-control form-control-user" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :email %><br />
+        <%= email_field_tag :email,  nil, placeholder: "Employee email", class: "form-control form-control-user" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= password_field_tag :password,  nil, placeholder: "Employee temp password", class: "form-control form-control-user" %>
+      </div>
+      <div class="form-group">
+        <%=label_tag :role %><br />
+        <%= select_tag :role, options_from_collection_for_select(@roles, "id", "name"), class: "browser-default custom-select"%>
+      </div>
