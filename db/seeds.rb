@@ -6,15 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
-require ‘faker’
-=======
-require 'faker'
-<<<<<<< HEAD
-=======
 
->>>>>>> master
->>>>>>> f1bc90c174770518db0603d455b0adcb1b0cc560
+require 'faker'
+
+
+
 screens = [
   "User",
   "Create user",
@@ -32,7 +28,7 @@ screens = [
   "Purshas",
   "Sales"
 ]
-<<<<<<< HEAD
+
 roles = ["admin","employee", "manager"]
 screens.each do |screen|
   Screen.create(
@@ -41,49 +37,29 @@ screens.each do |screen|
   )
    p ‘screens created’
 end
- roles.each do |role|
+
+roles.each do |role|
     Role.create(
       name: role,
     )
      p ‘Roles created’
  end
 10.times do |category|
-=======
-roles = ["admin","employee","manager"]
-
-screens.each do |screen|
-  Screen.create(
-    name: screen,
-    url: 'url',
-  )
-   p 'screens created'
-end
-roles.each do |role|
-    Role.create(
-      name: role,
-    )
-     p 'Roles created'
- end
- 10.times do |category|
-
->>>>>>> f1bc90c174770518db0603d455b0adcb1b0cc560
     Category.create(
      name: Faker::Name.name,
      logo: Faker::Company.industry
          )
     puts "Categories created"
 end
+
 10.times do |businessline|
     Businessline.create(
-<<<<<<< HEAD
-     name:        Faker::Name.name,
-=======
-     name:        Faker::Company.industry,
->>>>>>> f1bc90c174770518db0603d455b0adcb1b0cc560
+     name: Faker::Company.industry,
      description: Faker::Company.type
          )
     puts "Businesslines created"
 end
+
 10.times do |company|
     Company.create(
      name:   Faker::Name.name,
@@ -124,8 +100,6 @@ end
          )
     puts " stockins created"
 end
-<<<<<<< HEAD
-=======
 
 10.times do |stocklevels|
     Stocklevel.create(
@@ -134,4 +108,3 @@ end
         stocksecurity: Faker::Number.between(from: 0, to: 5)         )
     puts " stocklevels created"
 end
->>>>>>> f1bc90c174770518db0603d455b0adcb1b0cc560
