@@ -1,0 +1,5 @@
+var products = document.getElementById('products')
+while (products.firstChild) {
+    products.removeChild(products.firstChild);
+  }
+products.insertAdjacentHTML('afterbegin', '<%=j render "card_products", category: Category.find(params[:category_id])%>');

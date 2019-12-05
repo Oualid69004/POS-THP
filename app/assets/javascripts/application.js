@@ -18,3 +18,4 @@
 //= require bootstrap/js/bootstrap.bundle.min
 //= require jquery-easing/jquery.easing.min
 //= require assets/javascripts/sb-admin-2.min
+//= require chart.js/Chart.min

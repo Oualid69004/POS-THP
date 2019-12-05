@@ -44,7 +44,7 @@ roles.each do |role|
     Category.create(
      name: Faker::Name.name,
      logo: Faker::Company.industry
-         )
+ )
     puts "Categories created"
 end
 10.times do |businessline|
@@ -102,3 +102,23 @@ end
         stocksecurity: Faker::Number.between(from: 0, to: 5)         )
     puts " stocklevels created"
 end
+
+Company.all.each do |company|
+  3.times do
+    CompanyCategory.create(
+      company: company,
+      category: Category.find(rand(1..10))
+    )
+  end
+end
+
+legumes = Category.create(name: 'legumes', logo: 'a')
+viandes = Category.create(name: 'viandes', logo: 'a')
+fromages = Category.create(name: 'fromages', logo: 'a')
+Product.create(name: 'tomates', category: legumes)
+Product.create(name: 'courgettes', category: legumes)
+Product.create(name: 'steack', category: viandes)
+Product.create(name: 'jambon', category: viandes)
+Product.create(name: 'tome', category: fromages)
+Product.create(name: 'emmental', category: fromages)
+Product.create(name: 'cheddar', category: fromages)

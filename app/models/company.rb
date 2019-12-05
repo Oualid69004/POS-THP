@@ -5,4 +5,6 @@ class Company < ApplicationRecord
     has_many :suppliers
     #has_many :roles
     has_many :users
+    has_many :company_categories
+    has_many :categories, through: :company_categories
 end
