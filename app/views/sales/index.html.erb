@@ -1,0 +1,46 @@
+<h1 class="h3 mb-2 text-gray-800">Categories</h1>
+
+<div class="row" id="categories">
+  <% @categories.each do |category|%>
+    <%= render 'purshas/card_categories', category: category, ticket: @ticket %>
+  <% end %>
+</div>
+
+<div id="products">
+</div>
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6>Receipt</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="table">
+              <% @memory.products.each do |product| %>
+              <tr>
+                <td><%= product.id %></td>
+                <td><%= product.name %></td>
+                <td><%= product.pricebuy %> €</td>
+                <td>1</td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <div class="text-right">
+          <h4>Total : </h4>
+          <h3><%= @globalprice %> €</h3>
+          <a href="<%= ticketline_path(2) %>" data-method="put" class="btn btn-success px-4">Save</a>
+          <a href="<%= memory_path(@memory.id) %>" data-method="delete" data-confirm="Delete all products of your list ?" class="btn btn-danger px-4">Reset</a>
+        </div>
+      </div>
+    </div>
+  </div>

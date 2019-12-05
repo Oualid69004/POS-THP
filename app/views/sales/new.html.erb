@@ -1,0 +1,11 @@
+<h1 class="h3 mb-2 text-gray-800">Categories</h1>
+
+<div class="row" id="categories">
+  <% @categories.each do |category|%>
+    <%= render 'card_categories', category: category %>
+  <% end %>
+</div><h1 class="h3 mb-2 text-gray-800">Categories</h1>
+
+<div id="products">
+  <%= render "card_products", category: @category%>
+</div>

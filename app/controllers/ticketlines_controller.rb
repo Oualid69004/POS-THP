@@ -40,12 +40,21 @@ class TicketlinesController < ApplicationController
   # PATCH/PUT /ticketlines/1
   # PATCH/PUT /ticketlines/1.json
   def update
-    @ticket = Ticket.create(company: current_user.company)
-    current_user.memory.ticketlines.each do |ticketline|
-      Product.create(name: ticketline.product.name, category: ticketline.product.category, stockcurrent: Stockcurrent.first, pricebuy: ticketline.product.pricebuy)
-      ticketline.update(ticket: @ticket, memory: nil)
+    if params[:id] == '1'
+      @ticket = Ticket.create(company: current_user.company)
+      current_user.memory.ticketlines.each do |ticketline|
+        Product.create(name: ticketline.product.name, category: ticketline.product.category, stockcurrent: Stockcurrent.first, pricebuy: ticketline.product.pricebuy)
+        ticketline.update(ticket: @ticket, memory: nil)
+      end
+      redirect_to purshas_path
+    else
+      @ticket = Ticket.create(company: current_user.company)
+      current_user.memory.ticketlines.each do |ticketline|
+        current_user.company.stockcurrent.products.find(ticketline.product.id).destroy
+        ticketline.update(ticket: @ticket, memory: nil)
+      end
+      redirect_to sales_path
     end
-    redirect_to purshas_path
   end
 
   # DELETE /ticketlines/1
