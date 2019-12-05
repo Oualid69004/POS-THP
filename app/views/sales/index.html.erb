@@ -29,7 +29,7 @@
               <tr>
                 <td><%= product.id %></td>
                 <td><%= product.name %></td>
-                <td><%= product.pricebuy %> €</td>
+                <td id="<%= product.id %>"><%= product.pricebuy %> €</td>
                 <td>1</td>
               </tr>
               <% end %>
@@ -37,7 +37,7 @@
         </table>
         <div class="text-right">
           <h4>Total : </h4>
-          <h3><%= @globalprice %> €</h3>
+          <h3><span id="globalprice"><%= @globalprice %></span> €</h3>
           <a href="<%= ticketline_path(2) %>" data-method="put" class="btn btn-success px-4">Save</a>
           <a href="<%= memory_path(@memory.id) %>" data-method="delete" data-confirm="Delete all products of your list ?" class="btn btn-danger px-4">Reset</a>
         </div>
