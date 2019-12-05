@@ -14,8 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require chart.js/Chart.min
 //= require jquery/jquery.min
 //= require bootstrap/js/bootstrap.bundle.min
 //= require jquery-easing/jquery.easing.min
 //= require assets/javascripts/sb-admin-2.min
-//= require chart.js/Chart.min
