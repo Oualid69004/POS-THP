@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    
   end
 
   # POST /products
@@ -29,14 +30,14 @@ class ProductsController < ApplicationController
     Product.create(
     name: params[:name],
     # category: Category.find(params[:category]), 
-    # typeproduct: Typeproduct.find(params[:category]), 
+    # typeproduct: Typeproduct.find(params[:typeproduct]), 
     pricesell: params[:pricesell],
     pricebuy: params[:pricebuy],
     stockvolume: params[:stockvolume],
     reference: params[:reference],
     stockcost: params[:stockcost]
     ) 
-  redirect_to products_path
+    redirect_to products_path
   end
 
   # PATCH/PUT /products/1

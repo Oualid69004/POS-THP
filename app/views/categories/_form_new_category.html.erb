@@ -1,0 +1,13 @@
+<%= form_tag(categories_path, method: :post)%>
+    
+
+      <div class="form-group">
+      <%= label_tag :name %><br />
+      <%= text_field_tag :name,  nil, placeholder: "Name of the category", class: "form-control form-control-user" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :logo %><br />
+        <%= text_field_tag :logo,  nil, placeholder: "logo", class: "form-control form-control-user" %>
+      </div>
+
