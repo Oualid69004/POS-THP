@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_page#index'
   resources :static_page, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :memory, only: [:destroy, :update]
   resources :purshas
   resources :receipts
   resources :paymentsuppliers

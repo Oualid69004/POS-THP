@@ -1,8 +1,8 @@
 class Ticket < ApplicationRecord
-    belongs_to :branch
+    belongs_to :company, optional: true
     has_many :users
     has_many :customers
     has_many :ticketlines
-    belongs_to :receipt
-    
+    has_many :products, through: :ticketlines
+    belongs_to :receipt, optional: true
 end

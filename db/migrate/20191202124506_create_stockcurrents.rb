@@ -5,7 +5,7 @@ class CreateStockcurrents < ActiveRecord::Migration[5.2]
       t.float :cost
       t.float :total
       t.float :units
-      t.belongs_to :branch, index: true 
+      t.belongs_to :company, index: true 
 
       t.timestamps
     end

@@ -7,4 +7,6 @@ class Company < ApplicationRecord
     has_many :users
     has_many :company_categories
     has_many :categories, through: :company_categories
+    belongs_to :stockcurrent, optional: true
+
 end

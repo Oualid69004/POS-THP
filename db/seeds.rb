@@ -111,14 +111,30 @@ Company.all.each do |company|
     )
   end
 end
-
-legumes = Category.create(name: 'legumes', logo: 'a')
-viandes = Category.create(name: 'viandes', logo: 'a')
-fromages = Category.create(name: 'fromages', logo: 'a')
-Product.create(name: 'tomates', category: legumes)
-Product.create(name: 'courgettes', category: legumes)
-Product.create(name: 'steack', category: viandes)
-Product.create(name: 'jambon', category: viandes)
-Product.create(name: 'tome', category: fromages)
-Product.create(name: 'emmental', category: fromages)
-Product.create(name: 'cheddar', category: fromages)
+c = Company.create(name: 'admin', businessline: Businessline.last)
+memory = Memory.create
+admin = User.create(
+  first_name: 'admin',
+  last_name: 'admin',
+  email: 'admin@admin.admin',
+  password: '123456',
+  company: Company.last,
+  role: Role.first,
+  memory: memory
+)
+memory.update(user: admin)
+stock = Stockcurrent.create(company: c)
+c.update(stockcurrent: stock)
+legumes = Category.create(name: 'legumes')
+viandes = Category.create(name: 'viandes')
+fromages = Category.create(name: 'fromages')
+CompanyCategory.create(company: Company.last, category: legumes)
+CompanyCategory.create(company: Company.last, category: viandes)
+CompanyCategory.create(company: Company.last, category: fromages)
+Product.create(name: 'tomates', category: legumes, stockcurrent: stock, pricebuy: 3)
+Product.create(name: 'courgettes', category: legumes, stockcurrent: stock, pricebuy: 6)
+Product.create(name: 'steack', category: viandes, stockcurrent: stock, pricebuy: 10)
+Product.create(name: 'jambon', category: viandes, stockcurrent: stock, pricebuy: 5)
+Product.create(name: 'tome', category: fromages, stockcurrent: stock, pricebuy: 7)
+Product.create(name: 'emmental', category: fromages, stockcurrent: stock, pricebuy: 4)
+Product.create(name: 'cheddar', category: fromages, stockcurrent: stock, pricebuy: 1)

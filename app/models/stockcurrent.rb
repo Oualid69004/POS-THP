@@ -1,5 +1,5 @@
 class Stockcurrent < ApplicationRecord
-    belongs_to :branch
+    belongs_to :company
     has_many :products
 
 end

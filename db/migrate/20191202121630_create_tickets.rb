@@ -9,7 +9,7 @@ class CreateTickets < ActiveRecord::Migration[5.2]
       t.float :ticketTotal
       t.string :ticketid
       t.string :tickettype
-      t.belongs_to :branch, index: true 
+      t.belongs_to :company, index: true
       t.belongs_to :receipt, index: true
       t.timestamps
     end

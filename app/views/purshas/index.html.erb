@@ -2,7 +2,7 @@
 
 <div class="row" id="categories">
   <% @categories.each do |category|%>
-    <%= render 'card_categories', category: category %>
+    <%= render 'card_categories', category: category, ticket: @ticket %>
   <% end %>
 </div>
 
@@ -25,14 +25,21 @@
             </tr>
           </thead>
           <tbody id="table">
-            
+              <% @memory.products.each do |product| %>
+              <tr>
+                <td><%= product.id %></td>
+                <td><%= product.name %></td>
+                <td><%= product.pricebuy %> €</td>
+                <td>1</td>
+              </tr>
+              <% end %>
           </tbody>
         </table>
         <div class="text-right">
           <h4>Total : </h4>
-          <h3>0 €</h3>
-          <a href="#" class="btn btn-success px-4">Save</a>
-          <a href="#" class="btn btn-danger px-4">Reset</a>
+          <h3><%= @globalprice %> €</h3>
+          <a href="<%= ticketline_path(1) %>" data-method="put" class="btn btn-success px-4">Save</a>
+          <a href="<%= memory_path(@memory.id) %>" data-method="delete" data-confirm="Delete all products of your list ?" class="btn btn-danger px-4">Reset</a>
         </div>
       </div>
     </div>

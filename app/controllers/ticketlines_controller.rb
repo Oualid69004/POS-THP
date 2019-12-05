@@ -40,15 +40,12 @@ class TicketlinesController < ApplicationController
   # PATCH/PUT /ticketlines/1
   # PATCH/PUT /ticketlines/1.json
   def update
-    respond_to do |format|
-      if @ticketline.update(ticketline_params)
-        format.html { redirect_to @ticketline, notice: 'Ticketline was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ticketline }
-      else
-        format.html { render :edit }
-        format.json { render json: @ticketline.errors, status: :unprocessable_entity }
-      end
+    @ticket = Ticket.create(company: current_user.company)
+    current_user.memory.ticketlines.each do |ticketline|
+      Product.create(name: ticketline.product.name, category: ticketline.product.category, stockcurrent: Stockcurrent.first, pricebuy: ticketline.product.pricebuy)
+      ticketline.update(ticket: @ticket, memory: nil)
     end
+    redirect_to purshas_path
   end
 
   # DELETE /ticketlines/1
