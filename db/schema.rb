@@ -10,69 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_084138) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "branches", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "mobile"
-    t.bigint "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_branches_on_company_id"
-  end
-
-  create_table "businesslines", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "closedcashes", force: :cascade do |t|
-    t.string "money"
-    t.string "host"
-    t.string "hostsequence"
-    t.bigint "branch_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["branch_id"], name: "index_closedcashes_on_branch_id"
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "logo"
-    t.string "mobile"
-    t.bigint "businessline_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["businessline_id"], name: "index_companies_on_businessline_id"
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "adress"
-    t.string "email"
-    t.string "mobile"
-    t.bigint "company_id"
-    t.bigint "ticket_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_customers_on_company_id"
-    t.index ["ticket_id"], name: "index_customers_on_ticket_id"
-  end
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -90,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_084138) do
     t.index ["ticket_id"], name: "index_employees_on_ticket_id"
   end
 
+<<<<<<< HEAD
   create_table "payments", force: :cascade do |t|
     t.string "discountPer"
     t.string "discountVal"
@@ -257,5 +199,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_084138) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 
 end

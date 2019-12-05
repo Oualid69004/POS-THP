@@ -7,4 +7,4 @@ class User < ApplicationRecord
          belongs_to :company, optional: true
          belongs_to :role, optional: true
          belongs_to :ticket, optional: true
-end
+end 

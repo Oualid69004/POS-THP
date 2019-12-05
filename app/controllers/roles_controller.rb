@@ -5,6 +5,7 @@ class RolesController < ApplicationController
   # GET /roles.json
   def index
     @roles = Role.all
+   @users = User.all
   end
 
   # GET /roles/1
@@ -24,17 +25,13 @@ class RolesController < ApplicationController
   # POST /roles
   # POST /roles.json
   def create
-    @role = Role.new(role_params)
+    Role.create(
+      name: params[:name]
 
-    respond_to do |format|
-      if @role.save
-        format.html { redirect_to @role, notice: 'Role was successfully created.' }
-        format.json { render :show, status: :created, location: @role }
-      else
-        format.html { render :new }
-        format.json { render json: @role.errors, status: :unprocessable_entity }
-      end
-    end
+    )
+
+      redirect_to roles_path
+   
   end
 
   # PATCH/PUT /roles/1
@@ -54,21 +51,21 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.json
   def destroy
+    @role = Role.find(params[:id])
     @role.destroy
-    respond_to do |format|
-      format.html { redirect_to roles_url, notice: 'Role was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to roles_path
+ 
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_role
-      @role = Role.find(params[:id])
+      # @role = Role.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def role_params
-      params.require(:role).permit(:name)
+      # params.require(:role).permit(:name)
     end
 end

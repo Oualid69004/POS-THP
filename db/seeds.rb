@@ -9,6 +9,7 @@
 
 require 'faker'
 
+<<<<<<< HEAD
 10.times do |category|
     Category.create(
      name: Faker::Name.name,
@@ -53,6 +54,9 @@ end
 
     puts "ClosedCah created"
 end
+=======
+
+>>>>>>> master
 
 screens = [
   "User",
@@ -71,6 +75,7 @@ screens = [
   "Purshas",
   "Sales"
 ]
+<<<<<<< HEAD
 screens.each do |screen|
   Screen.create(
     name: screen,
@@ -80,11 +85,25 @@ end
 
 roles = ["admin","employee", "manager"]
  roles.each do |role|
+=======
+
+roles = ["admin","employee", "manager"]
+screens.each do |screen|
+  Screen.create(
+    name: screen,
+    url: "url",
+  )
+   p "screens created"
+end
+
+roles.each do |role|
+>>>>>>> master
     Role.create(
       name: role,
     )
      p "Roles created"
  end
+<<<<<<< HEAD
 
 10.times do |paymentsuppliers|
     Paymentsupplier.create(
@@ -95,16 +114,73 @@ roles = ["admin","employee", "manager"]
     puts "Paymentsupplier created"
 end
 
+=======
+10.times do |category|
+    Category.create(
+     name: Faker::Name.name,
+     logo: Faker::Company.industry
+         )
+    puts "Categories created"
+end
+
+10.times do |businessline|
+    Businessline.create(
+     name: Faker::Company.industry,
+     description: Faker::Company.type
+         )
+    puts "Businesslines created"
+end
+
+10.times do |company|
+    Company.create(
+     name:   Faker::Name.name,
+     address: Faker::Address.street_address ,
+     logo:   Faker::Cosmere.shard_world,
+     mobile: Faker::Number.leading_zero_number(digits: 10),
+     businessline: Businessline.find(rand(1..10))
+         )
+    puts "Company created"
+end
+10.times do |branch|
+    Branch.create(
+     name:   Faker::Name.name,
+     address: Faker::Address.street_address ,
+     mobile: Faker::Number.leading_zero_number(digits: 10),
+     company: Company.find(rand(1..10))
+         )
+    puts "Branch created"
+end
+10.times do |closedcashes|
+    Closedcash.create(
+     money:   Faker::Number.decimal(l_digits: 2),
+     host:    Faker::Name.name ,
+     branch: Branch.find(rand(1..10))
+         )
+    puts "ClosedCah created"
+end
+10.times do |paymentsuppliers|
+    Paymentsupplier.create(
+    paymentNote:   Faker::Number.decimal(l_digits: 2),
+    paymentValue:  Faker::Number.decimal(l_digits: 2),
+         )
+    puts " paymentsuppliers created"
+end
+>>>>>>> master
 10.times do |stockins|
     Stockin.create(
         total: Faker::Number.between(from: 0, to: 10000),
          )
     puts " stockins created"
 end
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 10.times do |stocklevels|
     Stocklevel.create(
         location: Faker::Address.building_number,
         stockmaximum: Faker::Number.between(from: 0, to: 1000),
+<<<<<<< HEAD
         stocksecurity: Faker::Number.between(from: 0, to: 5)
          )
     puts " stocklevels created"
@@ -131,3 +207,27 @@ end
     puts "suppliers created"
 end
 
+=======
+        stocksecurity: Faker::Number.between(from: 0, to: 5)         )
+    puts " stocklevels created"
+end
+
+10.times do |ticket|
+    Ticket.create(
+        ticket: Faker::Code.ean,
+        # receipt: Faker::Code.ean
+         )
+
+    puts " ticket created"
+end
+
+# 10.times do |receipt|
+#     Receipt.create(
+#         reference_receip: Faker::Code.ean,
+#         ticket: Faker::Code.ean
+
+#          )
+         
+#     puts " receipt created"
+# end
+>>>>>>> master
