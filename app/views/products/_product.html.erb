@@ -19,14 +19,11 @@
             <th>StockVolume</th>
             <th>Reference</th>
             <th>Category</th>
-<<<<<<< HEAD
-            <th>StockCost</th>
-=======
+
             <th>Type product</th>
             <th>Edit</th>
             <th>Destroy</th>
-          
->>>>>>> master
+
           </tr>
         </thead>
         <!--
@@ -46,19 +43,12 @@
             <td><%= product.stockvolume %></td>
             <td><%= product.reference %></td>
             <td><%= product.stockcost %></td>
-<<<<<<< HEAD
-            <td><%= %></td>
-            <td><%= link_to 'Edit   ', edit_product_path(product) ,class: "btn btn-warning" %></td>
-            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %>
 
-          </tr>
-=======
             <td></td>
             <td><%= link_to 'Edit', edit_product_path(product) ,class: "btn btn-warning" %></td>
             <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
             </tr>
-       
->>>>>>> master
+
           <% end %>
         </tbody>
       </table>
@@ -75,11 +65,8 @@
         </button>
       </div>
       <div class="modal-body">
-<<<<<<< HEAD
-       <%= render "form_new_product"%>
-=======
+
        <%= render 'form_new_product' %>
->>>>>>> master
       </div>
       <div class="modal-footer">
         <div class="actions">
@@ -100,8 +87,5 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <!-- Page level custom scripts -->
-<<<<<<< HEAD
+
 <script src="js/demo/datatables-demo.js"></script>
-=======
-<script src="js/demo/datatables-demo.js"></script>
->>>>>>> master
