@@ -35,7 +35,7 @@
         </tfoot>
         -->
         <tbody>
-          <% @products.each do |product| %>
+          <% current_user.company.stockcurrent.products.each do |product| %>
           <tr>
             <td><%= product.name %></td>
             <td><%= product.pricesell %></td>
