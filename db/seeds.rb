@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require 'faker'
+
+
+
 screens = [
   "User",
   "Create user",
@@ -24,36 +28,36 @@ screens = [
   "Purshas",
   "Sales"
 ]
-roles = ["admin","employee","manager"]
-
 screens.each do |screen|
   Screen.create(
     name: screen,
     url: 'url',
   )
-   p 'screens created'
 end
-roles.each do |role|
+
+roles = ["admin","employee", "manager"]
+ roles.each do |role|
     Role.create(
       name: role,
     )
-     p 'Roles created'
+     p "Roles created"
  end
- 10.times do |category|
-
+10.times do |category|
     Category.create(
      name: Faker::Name.name,
      logo: Faker::Company.industry
  )
     puts "Categories created"
 end
+
 10.times do |businessline|
     Businessline.create(
-     name:        Faker::Company.industry,
+     name: Faker::Company.industry,
      description: Faker::Company.type
          )
     puts "Businesslines created"
 end
+
 10.times do |company|
     Company.create(
      name:   Faker::Name.name,
@@ -94,7 +98,6 @@ end
          )
     puts " stockins created"
 end
-
 10.times do |stocklevels|
     Stocklevel.create(
         location: Faker::Address.building_number,
@@ -138,3 +141,22 @@ Product.create(name: 'jambon', category: viandes, stockcurrent: stock, pricebuy:
 Product.create(name: 'tome', category: fromages, stockcurrent: stock, pricebuy: 7)
 Product.create(name: 'emmental', category: fromages, stockcurrent: stock, pricebuy: 4)
 Product.create(name: 'cheddar', category: fromages, stockcurrent: stock, pricebuy: 1)
+=======
+10.times do |ticket|
+    Ticket.create(
+        ticket: Faker::Code.ean,
+        # receipt: Faker::Code.ean
+         )
+
+    puts " ticket created"
+end
+
+# 10.times do |receipt|
+#     Receipt.create(
+#         reference_receip: Faker::Code.ean,
+#         ticket: Faker::Code.ean
+
+#          )
+
+#     puts " receipt created"
+# end

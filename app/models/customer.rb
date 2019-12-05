@@ -1,4 +1,4 @@
 class Customer < ApplicationRecord
-    belongs_to :company
-    belongs_to :ticket
+    belongs_to :company,optional: true
+    belongs_to :ticket,optional: true
 end
