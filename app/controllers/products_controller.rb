@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     Product.create(
-<<<<<<< HEAD
+
       name: params[:name],
       pricesell: params[:pricesell],
       pricebuy: params[:pricebuy],
@@ -34,18 +34,8 @@ class ProductsController < ApplicationController
       #ticketline: Ticketline.find(params[:ticketline])
     )
         redirect_to products_path
-=======
-    name: params[:name],
-    # category: Category.find(params[:category]), 
-    # typeproduct: Typeproduct.find(params[:typeproduct]), 
-    pricesell: params[:pricesell],
-    pricebuy: params[:pricebuy],
-    stockvolume: params[:stockvolume],
-    reference: params[:reference],
-    stockcost: params[:stockcost]
-    ) 
-    redirect_to products_path
->>>>>>> master
+
+
   end
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
@@ -65,29 +55,21 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-<<<<<<< HEAD
-=======
-    
->>>>>>> master
     redirect_to products_path
    
   end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-<<<<<<< HEAD
+
    # @product = Product.find(params[:id])
-=======
-      # @product = Product.find(params[:id])
->>>>>>> master
+
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-<<<<<<< HEAD
+
       #params.require(:product).permit(:name, :pricesell, :pricebuy, :stockvolume, :reference, :stockcost)
-=======
-      # params.require(:product).permit(:name, :pricesell, :pricebuy, :stockvolume, :reference, :stockcost)
->>>>>>> master
+
     end
 
   end
