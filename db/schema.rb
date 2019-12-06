@@ -15,20 +15,4 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.string "apppassword"
-    t.string "address"
-    t.string "email"
-    t.string "image"
-    t.bigint "company_id"
-    t.bigint "role_id"
-    t.bigint "ticket_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_employees_on_company_id"
-    t.index ["role_id"], name: "index_employees_on_role_id"
-    t.index ["ticket_id"], name: "index_employees_on_ticket_id"
-  end
-
 end
