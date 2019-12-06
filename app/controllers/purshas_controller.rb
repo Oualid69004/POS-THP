@@ -9,7 +9,7 @@ class PurshasController < ApplicationController
   end
 
   def new
-    @categories = Company.last.company.categories.all
+    @categories = Company.last.categories.all
     @category = Category.find(params[:category_id])
     respond_to do |format|
       format.html { redirect_to new_pursha_path}

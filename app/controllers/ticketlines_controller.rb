@@ -43,8 +43,10 @@ class TicketlinesController < ApplicationController
     if params[:id] == '1'
       @ticket = Ticket.create(company: current_user.company)
       current_user.memory.ticketlines.each do |ticketline|
-        Product.create(name: ticketline.product.name, category: ticketline.product.category, stockcurrent: Stockcurrent.first, pricebuy: ticketline.product.pricebuy)
+        category = current_user.company.categories.where(name: ticketline.product.category.name).first
+        Product.create(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1)
         ticketline.update(ticket: @ticket, memory: nil)
+        current_user.company.update(capital: (current_user.company.capital -= ticketline.product.pricebuy.to_i))
       end
       redirect_to purshas_path
     else
@@ -52,6 +54,7 @@ class TicketlinesController < ApplicationController
       current_user.memory.ticketlines.each do |ticketline|
         current_user.company.stockcurrent.products.find(ticketline.product.id).destroy
         ticketline.update(ticket: @ticket, memory: nil)
+        current_user.company.update(capital: (current_user.company.capital += ticketline.product.pricesell.to_i))
       end
       redirect_to sales_path
     end
