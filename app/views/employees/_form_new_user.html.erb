@@ -11,12 +11,14 @@
         <%= label_tag :email %><br />
         <%= email_field_tag :email,  nil, placeholder: "Employee email", class: "form-control form-control-user" %>
       </div>
-      <div class="form-group">
+
+      <div hidden class="form-group">
+    
         <%= label_tag :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= password_field_tag :password,  nil, placeholder: "Employee temp password", class: "form-control form-control-user" %>
+        <%= password_field_tag :password, '123456', placeholder: "Employee temp password", class: "form-control form-control-user" %>
       </div>
       <div class="form-group">
         <%=label_tag :role %><br />
