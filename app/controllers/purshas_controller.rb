@@ -1,6 +1,6 @@
 class PurshasController < ApplicationController
   def index
-    @categories = current_user.company.categories.all
+    @categories = Company.last.categories.all
     @memory = current_user.memory
     @globalprice = 0
     current_user.memory.products.each do |product|
@@ -9,7 +9,7 @@ class PurshasController < ApplicationController
   end
 
   def new
-    @categories = current_user.company.categories.all
+    @categories = Company.last.company.categories.all
     @category = Category.find(params[:category_id])
     respond_to do |format|
       format.html { redirect_to new_pursha_path}

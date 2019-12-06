@@ -1,5 +1,5 @@
 var table = document.getElementById('table')
-table.insertAdjacentHTML('afterbegin', '<tr><td><%= @product.id %></td><td><%= @product.name %></td><td><span id="<%=@product.id%>"><%= @product.pricebuy %></span> €</td><td>1</td></tr>');
+table.insertAdjacentHTML('afterbegin', '<tr><td><%= @product.id %></td><td><%= @product.name %></td><td><span id="<%=@product.id%>"><%= @product.pricesell %></span> €</td><td>1</td></tr>');
 var productPrice = parseInt(document.getElementById('<%=@product.id%>').innerHTML);
 var globalPrice = parseInt(document.getElementById('globalprice').innerHTML);
 document.getElementById('globalprice').innerHTML = globalPrice + productPrice;
