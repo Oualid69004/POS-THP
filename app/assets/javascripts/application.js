@@ -10,8 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-//= require chart.js/chart-bar-demo
-//= require chart.js/Chart.min
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
