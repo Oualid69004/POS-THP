@@ -15,11 +15,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require chart.js/chart-bar-demo
-//= require chart.js/chart-area-demo
-//= require chart.js/chart-pie-demo
-//= require datatables/datatables-demo
-//= require chart.js/Chart.min
 //= require jquery/jquery.min
 //= require bootstrap/js/bootstrap.bundle.min
 //= require bootstrap/js/bootstrap.min

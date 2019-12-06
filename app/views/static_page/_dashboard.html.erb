@@ -87,6 +87,40 @@
               </div>
             </div>
           </div>
+          <div class="row">
+          <!-- Content Column -->
+          <div class="col-12 mb-4">
+
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Stocklevel</h6>
+              </div>
+              <% if current_user.company.stockcurrent.products.length <= 20 %>
+              <div class="card-body">
+                <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
+                <div class="progress mb-4">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <% elsif current_user.company.stockcurrent.products.length <= 60 %>
+            <div class="card-body">
+              <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
+              <div class="progress mb-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <% else %>
+          <div class="card-body">
+            <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
+            <div class="progress mb-4">
+              <div class="progress-bar bg-success" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
+            </div>
+          </div>
+        <% end %>
+        </div>
 
           <!-- Content Row -->
 
@@ -163,40 +197,8 @@
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
 
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Stocklevel</h6>
-                </div>
-                <% if current_user.company.stockcurrent.products.length <= 20 %>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <% elsif current_user.company.stockcurrent.products.length <= 60 %>
-              <div class="card-body">
-                <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
-                <div class="progress mb-4">
-                  <div class="progress-bar bg-warning" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            <% else %>
-            <div class="card-body">
-              <h4 class="small font-weight-bold"> <span class="float-right"><%= current_user.company.stockcurrent.products.length %>%</span></h4>
-              <div class="progress mb-4">
-                <div class="progress-bar bg-success" role="progressbar" style="width: <%= current_user.company.stockcurrent.products.length %>%" aria-valuenow="<%= current_user.company.stockcurrent.products.length %>" aria-valuemin="5" aria-valuemax="100"></div>
-              </div>
-            </div>
           </div>
-          <% end %>
-
               <!-- Color System -->
               <div hidden class="row">
                 <div class="col-lg-6 mb-4">
