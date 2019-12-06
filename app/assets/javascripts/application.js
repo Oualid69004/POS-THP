@@ -11,12 +11,10 @@
 // about supported directives.
 //
 //= require chart.js/Chart.min
-//= require chart.js/chart-bar-demo
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require datatables/datatables-demo
 //= require jquery/jquery.min
 //= require bootstrap/js/bootstrap.bundle.min
 //= require bootstrap/js/bootstrap.min
