@@ -20,6 +20,8 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers/1/edit
   def edit
+    @supplier = Supplier.find(params[:id])
+    redirect_to suplliers_path
   end
 
   # POST /suppliers
