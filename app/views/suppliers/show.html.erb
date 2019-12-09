@@ -1,1 +1,26 @@
-<%=render 'suppliers'%>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>first_name:</strong>
+  <%= @suppliers.name %>
+</p>
+
+<p>
+  <strong>last_name:</strong>
+  <%= @suppliers.adress %>
+</p>
+
+<p>
+  <strong>adress:</strong>
+  <%= @suppliers.email %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%= @suppliers.mobile %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

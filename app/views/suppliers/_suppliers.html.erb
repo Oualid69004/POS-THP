@@ -42,12 +42,35 @@
         <td><%= supplier.mobile %></td>
        
        
-        <td><a class="btn btn-warning" href="<%=edit_supplier_path(supplier)%>" data-toggle="modal" data-target="#EditSupplierModal">
+        <td><a class="btn btn-warning" href="<%=edit_supplier_path(supplier)%>" data-toggle="modal" data-target="#EditSupplierModal<%=supplier.id%>">
       Edit
     </a></td>
         
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
       </tr>
+
+      <div class="modal fade" id="EditSupplierModal<%=supplier.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Edit supplier</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <%= render 'form_edit_supplier', supplier: supplier %>
+      </div>
+
+      <div class="modal-footer">
+        <div class="actions">
+            <%= submit_tag "Edit supplier", class: "btn btn-primary btn-user btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <% end %>
   </tbody>
       </table>
@@ -79,28 +102,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="EditSupplierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Edit supplier</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
 
-      <div class="modal-body">
-        <%= render 'form_edit_supplier' %>
-      </div>
-
-      <div class="modal-footer">
-        <div class="actions">
-            <%= submit_tag "Edit supplier", class: "btn btn-primary btn-user btn-block" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- Bootstrap core JavaScript-->

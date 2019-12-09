@@ -21,7 +21,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1/edit
   def edit
     @supplier = Supplier.find(params[:id])
-    redirect_to suplliers_path
+    redirect_to suppliers_path
   end
 
   # POST /suppliers
@@ -40,6 +40,10 @@ class SuppliersController < ApplicationController
   # PATCH/PUT /suppliers/1
   # PATCH/PUT /suppliers/1.json
   def update
+
+    @supplier = Supplier.find(params[:id])
+    redirect_to suppliers_path
+
     respond_to do |format|
       if @supplier.update(supplier_params)
         format.html { redirect_to @supplier, notice: 'Supplier was successfully updated.' }

@@ -38,10 +38,36 @@
         <td><%= customer.email %></td>
         <td><%= customer.mobile %></td>
        
-       
-        <td><%= link_to 'Edit', edit_customer_path(customer) ,class: "btn btn-warning" %></td>
+     <td><a class="btn btn-warning" href="<%=edit_customer_path(customer)%>" data-toggle="modal" data-target="#EditCustomerModal<%=customer.id%>">
+      Edit
+    </a></td>
+        
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
       </tr>
+
+      <div class="modal fade" id="EditCustomerModal<%=customer.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Edit customer</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <%= render 'form_edit_customer', customer: customer %>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="actions">
+            <%= submit_tag "Edit customer", class: "btn btn-primary btn-user btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <% end %>
   </tbody>
       </table>
@@ -73,7 +99,9 @@
     </div>
   </div>
 </div>
-
+<%Customer.all.each do |customer|%>
+<p><%=customer%></p>
+<%end%>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
