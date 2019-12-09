@@ -6,7 +6,7 @@ class CreateTicketlines < ActiveRecord::Migration[5.2]
       t.float :price
       t.string :taxid
       t.float :unitCost
-      t.float :units
+      t.integer :units, default: 1
       t.float :unitsRefund
       t.belongs_to :product, index: true
       t.belongs_to :ticket, index: true

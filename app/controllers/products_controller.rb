@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = current_user.company.stockcurrent.products
     @categories =Category.all
     @type_products = Typeproduct.all
   end
@@ -18,23 +18,25 @@ class ProductsController < ApplicationController
   end
   # GET /products/1/edit
   def edit
-    
+
   end
   # POST /products
   # POST /products.json
   def create
-    Product.create(
-
+    product = Product.new(
       name: params[:name],
       pricesell: params[:pricesell],
       pricebuy: params[:pricebuy],
       stockvolume: params[:stockvolume],
-      reference: params[:reference]
-   #   category: Category.find(params[:category]),
-      #ticketline: Ticketline.find(params[:ticketline])
+      reference: params[:reference],
+      category: Category.find(params[:category]),
     )
-        redirect_to products_path
-
+    if Product.find_by(name: params[:name]) == nil
+      product.save
+    else
+      Product.find_by(name: params[:name]).update(stockvolume: Product.find_by(name: params[:name]).stockvolume + 1)
+    end
+    redirect_to products_path
   end
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
@@ -53,10 +55,14 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
+    if @product.stockvolume == 1
+      @product.destroy
+    else
+      @product.update(stockvolume: @product.stockvolume - 1)
+    end
 
     redirect_to products_path
-   
+
   end
   private
     # Use callbacks to share common setup or constraints between actions.
