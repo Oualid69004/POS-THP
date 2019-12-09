@@ -1,5 +1,6 @@
 class RolepermissionsController < ApplicationController
   before_action :set_rolepermission, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Permissions") }
 
   # GET /rolepermissions
   # GET /rolepermissions.json

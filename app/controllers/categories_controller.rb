@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Categories") }
 
   # GET /categories
   # GET /categories.json
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
         logo: params[:logo]
       )
       redirect_to categories_path
-  
+
   end
 
   # PATCH/PUT /categories/1
@@ -51,10 +52,10 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-     
+
     redirect_to categories_path
 
-    
+
   end
 
   private
@@ -67,4 +68,6 @@ class CategoriesController < ApplicationController
     def category_params
       # params.require(:category).permit(:name, :logo)
     end
+
+
 end

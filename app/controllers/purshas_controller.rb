@@ -1,4 +1,6 @@
 class PurshasController < ApplicationController
+  before_action -> { as_access?("Purshas") }
+
   def index
     @categories = Company.last.categories.all
     @memory = current_user.memory
