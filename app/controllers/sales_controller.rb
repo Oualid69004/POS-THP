@@ -4,7 +4,7 @@ class SalesController < ApplicationController
     @memory = current_user.memory
     @globalprice = 0
     current_user.memory.products.each do |product|
-      @globalprice += product.pricebuy.to_i
+      @globalprice += product.pricesell.to_i
     end
   end
 

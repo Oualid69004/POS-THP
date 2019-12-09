@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :pricesell
       t.string :pricebuy
-      t.integer :stockvolume
+      t.integer :stockvolume, default: 1
       t.string :reference
       t.float :stockcost
 
