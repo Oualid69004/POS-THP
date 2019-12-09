@@ -44,7 +44,12 @@ class TicketlinesController < ApplicationController
       @ticket = Ticket.create(company: current_user.company)
       current_user.memory.ticketlines.each do |ticketline|
         category = current_user.company.categories.where(name: ticketline.product.category.name).first
-        Product.create(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1)
+        product = Product.new(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1)
+        if Product.find_by(name: ticketline.product.name, stockcurrent: current_user.company.stockcurrent) == nil
+          product.save
+        else
+          Product.find_by(name: ticketline.product.name, stockcurrent: current_user.company.stockcurrent).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+        end
         ticketline.update(ticket: @ticket, memory: nil)
         current_user.company.update(capital: (current_user.company.capital -= ticketline.product.pricebuy.to_i))
       end
@@ -52,7 +57,12 @@ class TicketlinesController < ApplicationController
     else
       @ticket = Ticket.create(company: current_user.company)
       current_user.memory.ticketlines.each do |ticketline|
-        current_user.company.stockcurrent.products.find(ticketline.product.id).destroy
+        if ticketline.product.stockvolume == 1
+          current_user.company.stockcurrent.products.find(ticketline.product.id).destroy
+        else
+          product = current_user.company.stockcurrent.products.find(ticketline.product.id)
+          product.update(stockvolume: product.stockvolume -= 1)
+        end
         ticketline.update(ticket: @ticket, memory: nil)
         current_user.company.update(capital: (current_user.company.capital += ticketline.product.pricesell.to_i))
       end
@@ -73,7 +83,7 @@ class TicketlinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ticketline
-      @ticketline = Ticketline.find(params[:id])
+    #  @ticketline = Ticketline.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

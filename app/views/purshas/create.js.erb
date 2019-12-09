@@ -3,3 +3,8 @@ table.insertAdjacentHTML('afterbegin', '<tr><td><%= @product.id %></td><td><%= @
 var productPrice = parseInt(document.getElementById('<%=@product.id%>').innerHTML);
 var globalPrice = parseInt(document.getElementById('globalprice').innerHTML);
 document.getElementById('globalprice').innerHTML = globalPrice + productPrice;
+var quantity = parseInt(document.getElementById('quantity-<%=@product.id%>').innerHTML);
+
+if (quantity > 1) {
+  console.log(quantity);
+}

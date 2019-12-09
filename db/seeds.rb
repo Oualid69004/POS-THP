@@ -135,13 +135,55 @@ CompanyCategory.create(company: c, category: legumes)
 CompanyCategory.create(company: c, category: viandes)
 CompanyCategory.create(company: c, category: fromages)
 10.times do
-  Product.create(name: 'tomates', category: legumes, stockcurrent: stock, pricebuy: 3, pricesell: 4)
-  Product.create(name: 'courgettes', category: legumes, stockcurrent: stock, pricebuy: 6, pricesell: 7)
-  Product.create(name: 'steack', category: viandes, stockcurrent: stock, pricebuy: 10, pricesell: 12)
-  Product.create(name: 'jambon', category: viandes, stockcurrent: stock, pricebuy: 5, pricesell: 6)
-  Product.create(name: 'tome', category: fromages, stockcurrent: stock, pricebuy: 7, pricesell: 8)
-  Product.create(name: 'emmental', category: fromages, stockcurrent: stock, pricebuy: 4, pricesell: 5)
-  Product.create(name: 'cheddar', category: fromages, stockcurrent: stock, pricebuy: 1, pricesell: 2)
+  a = Product.new(name: 'tomates', category: legumes, stockcurrent: stock, pricebuy: 3, pricesell: 4)
+  if Product.find_by(name: 'tomates') == nil
+    a.save
+  else
+    Product.find_by(name: 'tomates').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  b = Product.new(name: 'courgettes', category: legumes, stockcurrent: stock, pricebuy: 6, pricesell: 7)
+  if Product.find_by(name: 'courgettes') == nil
+    b.save
+  else
+    Product.find_by(name: 'courgettes').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  c = Product.new(name: 'steack', category: viandes, stockcurrent: stock, pricebuy: 10, pricesell: 12)
+  if Product.find_by(name: 'steack') == nil
+    c.save
+  else
+    Product.find_by(name: 'steack').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  d = Product.new(name: 'jambon', category: viandes, stockcurrent: stock, pricebuy: 5, pricesell: 6)
+  if Product.find_by(name: 'jambon') == nil
+    d.save
+  else
+    Product.find_by(name: 'jambon').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  e = Product.new(name: 'tome', category: fromages, stockcurrent: stock, pricebuy: 7, pricesell: 8)
+  if Product.find_by(name: 'tome') == nil
+    e.save
+  else
+    Product.find_by(name: 'tome').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  f = Product.new(name: 'emmental', category: fromages, stockcurrent: stock, pricebuy: 4, pricesell: 5)
+  if Product.find_by(name: 'emmental') == nil
+    f.save
+  else
+    Product.find_by(name: 'emmental').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
+  g = Product.new(name: 'cheddar', category: fromages, stockcurrent: stock, pricebuy: 1, pricesell: 2)
+  if Product.find_by(name: 'cheddar') == nil
+    g.save
+  else
+    Product.find_by(name: 'cheddar').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+  end
+
 end
 supplier = Company.create(name: 'supplier', businessline: Businessline.last)
 supplierstock = Stockcurrent.create(company: supplier)
@@ -152,10 +194,52 @@ fromagessupplier = Category.create(name: 'fromages')
 CompanyCategory.create(company: supplier, category: legumessupplier)
 CompanyCategory.create(company: supplier, category: viandessuppier)
 CompanyCategory.create(company: supplier, category: fromagessupplier)
-Product.create(name: 'tomates', category: legumessupplier, stockcurrent: supplierstock, pricebuy: 3)
-Product.create(name: 'courgettes', category: legumessupplier, stockcurrent: supplierstock, pricebuy: 6)
-Product.create(name: 'steack', category: viandessuppier, stockcurrent: supplierstock, pricebuy: 10)
-Product.create(name: 'jambon', category: viandessuppier, stockcurrent: supplierstock, pricebuy: 5)
-Product.create(name: 'tome', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 7)
-Product.create(name: 'emmental', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 4)
-Product.create(name: 'cheddar', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 1)
+
+a = Product.new(name: 'tomates', category: legumessupplier, stockcurrent: supplierstock, pricebuy: 3)
+if Product.find_by(name: 'tomates', stockcurrent: supplierstock) == nil
+  a.save
+else
+  Product.find_by(name: 'tomates', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+b = Product.new(name: 'courgettes', category: legumessupplier, stockcurrent: supplierstock, pricebuy: 6)
+if Product.find_by(name: 'courgettes', stockcurrent: supplierstock) == nil
+  b.save
+else
+  Product.find_by(name: 'courgettes', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+c = Product.new(name: 'steack', category: viandessuppier, stockcurrent: supplierstock, pricebuy: 10)
+if Product.find_by(name: 'steack', stockcurrent: supplierstock) == nil
+  c.save
+else
+  Product.find_by(name: 'steack', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+d = Product.new(name: 'jambon', category: viandessuppier, stockcurrent: supplierstock, pricebuy: 5)
+if Product.find_by(name: 'jambon', stockcurrent: supplierstock) == nil
+  d.save
+else
+  Product.find_by(name: 'jambon', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+e = Product.new(name: 'tome', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 7)
+if Product.find_by(name: 'tome', stockcurrent: supplierstock) == nil
+  e.save
+else
+  Product.find_by(name: 'tome', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+f = Product.new(name: 'emmental', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 4)
+if Product.find_by(name: 'emmental', stockcurrent: supplierstock) == nil
+  f.save
+else
+  Product.find_by(name: 'emmental', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+g = Product.new(name: 'cheddar', category: fromagessupplier, stockcurrent: supplierstock, pricebuy: 1)
+if Product.find_by(name: 'cheddar', stockcurrent: supplierstock) == nil
+  g.save
+else
+  Product.find_by(name: 'cheddar', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
