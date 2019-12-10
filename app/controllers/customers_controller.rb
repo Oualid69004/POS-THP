@@ -32,9 +32,12 @@ class CustomersController < ApplicationController
       mobile: params[:mobile]
 
     )
-     redirect_to customers_path
-   
-    
+    if @customer.save
+      flash[:success] = "A customer was created !"
+      redirect_to root_path
+    else
+      redirect_to root_path   
+    end
   end
 
   # PATCH/PUT /customers/1
