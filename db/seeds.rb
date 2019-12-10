@@ -120,7 +120,7 @@ Company.all.each do |company|
     )
   end
 end
-c = Company.create(name: 'admin', businessline: Businessline.last, capital: 1000)
+c = Company.create(name: 'adminCompany', businessline: Businessline.last, capital: 1000)
 memory = Memory.create
 admin = User.create(
   first_name: 'admin',

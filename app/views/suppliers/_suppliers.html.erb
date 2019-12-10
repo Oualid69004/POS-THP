@@ -36,8 +36,8 @@
         <td><%= supplier.email %></td>
         <td><%= supplier.mobile %></td>
        
-       
-        <td><%= link_to 'Edit', edit_supplier_path(supplier) ,class: "btn btn-warning" %></td>
+        <td><%= link_to 'Show', supplier, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) ,class: "btn btn-warning btn-rounded" %></td>
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
       </tr>
     <% end %>
