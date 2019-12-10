@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Business Lines") }
+
   # GET /products
   # GET /products.json
   def index
@@ -30,6 +32,7 @@ class ProductsController < ApplicationController
       stockvolume: params[:stockvolume],
       reference: params[:reference],
       category: Category.find(params[:category]),
+      stockcurrent: current_user.company.stockcurrent
     )
     if Product.find_by(name: params[:name]) == nil
       product.save

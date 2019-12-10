@@ -1,5 +1,6 @@
 class RolepermissionsController < ApplicationController
   before_action :set_rolepermission, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Permissions") }
 
   # GET /rolepermissions
   # GET /rolepermissions.json
@@ -17,6 +18,10 @@ class RolepermissionsController < ApplicationController
     @roles = Role.all
     @screens = Screen.all
     @rolepermission = Rolepermission.new
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   # GET /rolepermissions/1/edit
@@ -26,13 +31,16 @@ class RolepermissionsController < ApplicationController
   # POST /rolepermissions
   # POST /rolepermissions.json
   def create
-    role = Role.find(params[:role])
     @screens = Screen.all
+    @roles = Role.all
     params[:screens].each do |screen|
-      unless screen == nil
-        select_screen = Screen.find(screen)
-        unless role.screens.include?(select_screen)
-          Rolepermission.create(role: role, screen: select_screen)
+    unless screen == nil
+      screenId = screen[1...-1].to_i
+      roleId = screen[1...-1].last.to_i
+      select_screen = Screen.find(screenId)
+      select_role = Role.find(roleId)
+        unless select_role.screens.include?(select_screen)
+          Rolepermission.create(role: select_role, screen: select_screen)
         end
       end
     end

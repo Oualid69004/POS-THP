@@ -1,0 +1,6 @@
+<% screens.each do |screen| %>
+<tr>
+  <td><%= screen.name %></td>
+  <td><%= check_box_tag "screens[]", screen.id, false %></td>
+</tr>
+<% end %>
