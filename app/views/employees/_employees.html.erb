@@ -36,6 +36,7 @@
             <td><%= employee.last_name %></td>
             <td><%= employee.email %></td>
             <td><%= employee.role.name %></td>
+            
             <td><center><a href="<%= employee_path(employee.id) %>" data-confirm='Are you sure ?' data-method='delete'><i class="fas fa-user-slash"></i></a></center></td>
           </tr>
           <% end %>

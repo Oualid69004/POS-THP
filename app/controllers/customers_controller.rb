@@ -1,5 +1,9 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
+=======
+  before_action -> { as_access?("Customs") }
+>>>>>>> master
 
   # GET /customers
   # GET /customers.json
@@ -24,6 +28,7 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
+<<<<<<< HEAD
     @customer = Customer.new(customer_params)
 
     respond_to do |format|
@@ -34,6 +39,23 @@ class CustomersController < ApplicationController
         format.html { render :new }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
+=======
+  Customer.create(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      adress: params[:adress],
+      email: params[:email],
+
+      mobile: params[:mobile]
+
+
+    )
+    if @customer.save
+      flash[:success] = "A customer was created !"
+      redirect_to root_path
+    else
+      redirect_to root_path   
+>>>>>>> master
     end
   end
 

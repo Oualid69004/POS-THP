@@ -3,17 +3,19 @@
 <%= form_tag(rolepermissions_path, method: :post)%>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-  <div class="card-header py-3">
+  <!--<div class="card-header py-3">
     <h6>Select Role</h6>
-    <%= select_tag "role", options_from_collection_for_select(@roles, "id", "name"), class: "browser-default custom-select"%>
-  </div>
+    <%= select_tag "role", options_from_collection_for_select(@roles, "id", "name"), class: "browser-default custom-select", data: {url: '#', method: 'get' ,remote: true}%>
+  </div>-->
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Screen</th>
-            <th>Access</th>
+            <% @roles.each do |role| %>
+              <th><%=role.name%></th>
+            <%end%>
           </tr>
         </thead>
         <!--
@@ -24,11 +26,14 @@
           </tr>
         </tfoot>
         -->
-        <tbody>
+
+        <tbody id="tablerole">
           <% @screens.each do |screen| %>
           <tr>
             <td><%= screen.name %></td>
-            <td><%= check_box_tag "screens[]", screen.id, false %></td>
+            <%@roles.each do |role|%>
+              <td><%= check_box_tag "screens[]", {screen.id=>role.id}, role.screens.include?(screen) ? true : false %></td>
+            <%end%>
           </tr>
           <% end %>
         </tbody>

@@ -41,31 +41,10 @@ class TicketlinesController < ApplicationController
   # PATCH/PUT /ticketlines/1.json
   def update
     if params[:id] == '1'
-      @ticket = Ticket.create(company: current_user.company)
-      current_user.memory.ticketlines.each do |ticketline|
-        category = current_user.company.categories.where(name: ticketline.product.category.name).first
-        product = Product.new(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1)
-        if Product.find_by(name: ticketline.product.name, stockcurrent: current_user.company.stockcurrent) == nil
-          product.save
-        else
-          Product.find_by(name: ticketline.product.name, stockcurrent: current_user.company.stockcurrent).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
-        end
-        ticketline.update(ticket: @ticket, memory: nil)
-        current_user.company.update(capital: (current_user.company.capital -= ticketline.product.pricebuy.to_i))
-      end
+      Ticket.purshas(current_user)
       redirect_to purshas_path
     else
-      @ticket = Ticket.create(company: current_user.company)
-      current_user.memory.ticketlines.each do |ticketline|
-        if ticketline.product.stockvolume == 1
-          current_user.company.stockcurrent.products.find(ticketline.product.id).destroy
-        else
-          product = current_user.company.stockcurrent.products.find(ticketline.product.id)
-          product.update(stockvolume: product.stockvolume -= 1)
-        end
-        ticketline.update(ticket: @ticket, memory: nil)
-        current_user.company.update(capital: (current_user.company.capital += ticketline.product.pricesell.to_i))
-      end
+      Ticket.sales(current_user)
       redirect_to sales_path
     end
   end

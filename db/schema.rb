@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_12_05_132252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name"
     t.string "pricesell"
     t.string "pricebuy"
-    t.float "stockvolume"
+    t.integer "stockvolume", default: 1
     t.string "reference"
     t.float "stockcost"
     t.bigint "category_id"
@@ -209,7 +209,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.float "price"
     t.string "taxid"
     t.float "unitCost"
-    t.float "units"
+    t.integer "units", default: 1
     t.float "unitsRefund"
     t.bigint "product_id"
     t.bigint "ticket_id"

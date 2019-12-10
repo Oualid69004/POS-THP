@@ -1,5 +1,6 @@
 class RolepermissionsController < ApplicationController
   before_action :set_rolepermission, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Permissions") }
 
   # GET /rolepermissions
   # GET /rolepermissions.json
@@ -17,6 +18,10 @@ class RolepermissionsController < ApplicationController
     @roles = Role.all
     @screens = Screen.all
     @rolepermission = Rolepermission.new
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   # GET /rolepermissions/1/edit
@@ -26,26 +31,10 @@ class RolepermissionsController < ApplicationController
   # POST /rolepermissions
   # POST /rolepermissions.json
   def create
-    role = Role.find(params[:role])
     @screens = Screen.all
-    params[:screens].each do |screen|
-      unless screen == nil
-        select_screen = Screen.find(screen)
-        unless role.screens.include?(select_screen)
-          Rolepermission.create(role: role, screen: select_screen)
-        end
-      end
-    end
+    @roles = Role.all
+    Rolepermission.roleperm(params[:screens])
     redirect_to root_path, notice: 'Les permissions ont bien été prises en compte.'
-  #  respond_to do |format|
-  #    if @rolepermission.save
-  #      format.html { redirect_to @rolepermission, notice: 'Rolepermission was successfully created.' }
-  #      format.json { render :show, status: :created, location: @rolepermission }
-  #    else
-  #      format.html { render :new }
-  #      format.json { render json: @rolepermission.errors, status: :unprocessable_entity }
-  #    end
-  #  end
   end
 
   # PATCH/PUT /rolepermissions/1

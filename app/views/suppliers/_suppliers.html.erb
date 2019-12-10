@@ -41,11 +41,9 @@
         <td><%= supplier.email %></td>
         <td><%= supplier.mobile %></td>
        
-       
-        <td><a class="btn btn-warning" href="<%=edit_supplier_path(supplier)%>" data-toggle="modal" data-target="#EditSupplierModal<%=supplier.id%>">
-      Edit
-    </a></td>
-        
+
+        <td><%= link_to 'Show', supplier, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) ,class: "btn btn-warning btn-rounded" %></td>
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
       </tr>
 
