@@ -41,10 +41,10 @@ class TicketlinesController < ApplicationController
   # PATCH/PUT /ticketlines/1.json
   def update
     if params[:id] == '1'
-      @ticket = Ticket.purshas(current_user)
+      Ticket.purshas(current_user)
       redirect_to purshas_path
     else
-      @ticket = Ticket.sales(current_user)
+      Ticket.sales(current_user)
       redirect_to sales_path
     end
   end

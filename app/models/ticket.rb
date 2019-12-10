@@ -7,12 +7,12 @@ class Ticket < ApplicationRecord
     belongs_to :receipt, optional: true
 
     def self.purshas(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alphanumeric(number: 10))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15))
       globalprice = 0
       current_user.memory.ticketlines.each do |ticketline|
-        quantity = ticketline.units
-        ticketline_price = ticketline.product.pricebuy * quantity
-        globalprice += ticketline.product.pricebuy.to_i
+        quantity = ticketline.units.to_i
+        ticketline_price = ticketline.product.pricebuy.to_i * quantity
+        globalprice += ticketline_price
         category = current_user.company.categories.where(name: ticketline.product.category.name).first
         product = Product.new(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1, stockvolume: ticketline.units)
         if Product.find_by(name: ticketline.product.name, stockcurrent: current_user.company.stockcurrent) == nil
@@ -27,7 +27,7 @@ class Ticket < ApplicationRecord
     end
 
     def self.sales(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alphanumeric(number: 10))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15))
       globalprice = 0
       current_user.memory.ticketlines.each do |ticketline|
         ticketline_price = ticketline.product.pricesell.to_i * ticketline.units.to_i
