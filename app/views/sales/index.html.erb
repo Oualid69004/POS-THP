@@ -2,7 +2,7 @@
 
 <div class="row" id="categories">
   <% @categories.each do |category|%>
-    <%= render 'purshas/card_categories', category: category, ticket: @ticket %>
+    <%= render 'card_categories', category: category, ticket: @ticket %>
   <% end %>
 </div>
 

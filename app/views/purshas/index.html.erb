@@ -25,12 +25,12 @@
             </tr>
           </thead>
           <tbody id="table">
-              <% @memory.products.each do |product| %>
+              <% @memory.ticketlines.each do |ticketline| %>
               <tr>
-                <td><%= product.id %></td>
-                <td><%= product.name %></td>
-                <td id="<%= product.id %>"><%= product.pricebuy %> €</td>
-                <td>1</td>
+                <td><%= ticketline.product.id %></td>
+                <td><%= ticketline.product.name %></td>
+                <td id="<%= ticketline.product.id %>"><%= ticketline.product.pricebuy %> €</td>
+                <td><%= ticketline.units %></td>
               </tr>
               <% end %>
           </tbody>

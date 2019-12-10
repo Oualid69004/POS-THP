@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Customs") }
 
   # GET /customers
   # GET /customers.json
@@ -29,7 +30,9 @@ class CustomersController < ApplicationController
       last_name: params[:last_name],
       adress: params[:adress],
       email: params[:email],
+
       mobile: params[:mobile]
+
 
     )
     if @customer.save
