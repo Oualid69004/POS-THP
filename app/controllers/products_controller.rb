@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   def index
     @products = current_user.company.stockcurrent.products
     @categories =Category.all
-    @type_products = Typeproduct.all
   end
   # GET /products/1
   # GET /products/1.json

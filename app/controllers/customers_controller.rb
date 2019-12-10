@@ -25,14 +25,22 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    Customer.create(
+  Customer.create(
       first_name: params[:first_name],
       last_name: params[:last_name],
       adress: params[:adress],
       email: params[:email],
-      mobile: params[:mobile],
+
+      mobile: params[:mobile]
+
+
     )
-    redirect_to customers_path
+    if @customer.save
+      flash[:success] = "A customer was created !"
+      redirect_to root_path
+    else
+      redirect_to root_path   
+    end
   end
 
   # PATCH/PUT /customers/1

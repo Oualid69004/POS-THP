@@ -1,0 +1,32 @@
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="row">
+    <div class="span2">
+<img src="https://img.icons8.com/officel/80/000000/gender-neutral-user.png" alt="" class="img-rounded">
+          </div>
+             <div class="span4">
+                <blockquote>
+                     <p>
+                           <%= @supplier.name %></p>
+                                 <small><cite title="Source Title"> <strong>adress:</strong>
+                                       <%= @supplier.adress %>  <i class="icon-map-marker"></i></cite></small>
+                                 </blockquote>
+                            <p>
+                        <i class="icon-envelope"></i> 
+                   <%= @supplier.email %>  <br>
+            <img src="https://img.icons8.com/material-two-tone/24/000000/two-smartphones.png">
+      <%= @supplier.mobile %>
+  </p>
+       </div>
+           </div>
+              </div>
+                  <p id="notice"><%= notice %></p>
+
+                      <%= link_to "Edit", edit_supplier_path(@supplier), class: "btn btn-warning btn-rounded"  %> |
+                          <%= link_to "Back", suppliers_path %>
+                           
+

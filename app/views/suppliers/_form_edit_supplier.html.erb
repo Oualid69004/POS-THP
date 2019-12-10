@@ -1,0 +1,19 @@
+<%= form_tag(supplier_path(supplier.id), method: :patch)%>
+  <div class="form-group">
+      <%= label_tag :name %><br />
+      <%= text_field_tag :name,  nil,  class: "form-control form-control-user" %>
+    </div>
+    <div class="form-group">
+        <%= label_tag :adress %><br />
+        <%= text_field_tag :adress,  nil, placeholder: "Supplier address", class: "form-control form-control-user" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :email %><br />
+        <%= email_field_tag :email,  nil, placeholder: "Supplier Email", class: "form-control form-control-user" %>
+      </div>
+          <div class="form-group">
+        <%= label_tag :Mobile %><br />
+        <%= text_field_tag :mobile,  nil, placeholder: "Supplier Mobile", class: "form-control form-control-user" %>
+      </div>
+      
+     

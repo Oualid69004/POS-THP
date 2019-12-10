@@ -1,21 +1,26 @@
-<%= form_tag(customers_path, method: :post)%>
-  <div class="form-group">
-      <%= label_tag :first_name %><br />
-      <%= text_field_tag :first_name,  nil, placeholder: "Customer  first name", class: "form-control form-control-user" %>
-    </div>
+
       <div class="form-group">
-      <%= label_tag :last_name %><br />
-      <%= text_field_tag :last_name,  nil, placeholder: "Customer last  name", class: "form-control form-control-user" %>
-    </div>
-    <div class="form-group">
-        <%= label_tag :adress %><br />
-        <%= text_field_tag :adress,  nil, placeholder: "Customer address", class: "form-control form-control-user" %>
+      <%= label_tag :first_name %><br />
+      <%= text_field_tag :first_name,  nil, placeholder: "first_name ", class: "form-control form-control-user" %>
       </div>
+
+      <div class="form-group">
+        <%= label_tag :last_name %><br />
+        <%= text_field_tag :last_name,  nil, placeholder: "last_name", class: "form-control form-control-user" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :adress %><br />
+        <%= text_field_tag :adress,  nil, placeholder: "adress", class: "form-control form-control-user" %>
+      </div>
+
       <div class="form-group">
         <%= label_tag :email %><br />
-        <%= email_field_tag :email,  nil, placeholder: "Customer Email", class: "form-control form-control-user" %>
+        <%= text_field_tag :email,  nil, placeholder: "email", class: "form-control form-control-user" %>
       </div>
-          <div class="form-group">
-        <%= label_tag :Mobile %><br />
-        <%= text_field_tag :mobile,  nil, placeholder: "Customer Mobile", class: "form-control form-control-user" %>
+
+
+        <div class="form-group">
+        <%= label_tag :mobile %><br />
+        <%= text_field_tag :mobile,  nil, placeholder: "mobile", class: "form-control form-control-user" %>
       </div>
