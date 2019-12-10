@@ -1,5 +1,7 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session
+
 
   # GET /suppliers
   # GET /suppliers.json

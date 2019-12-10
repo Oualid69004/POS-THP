@@ -1,24 +1,31 @@
-<%= form_tag(customer_path(customer.id), method: :patch)%>
+<%=form_for(customer, url: customer_path(customer.id), html: {method: "patch"}) do|f|%>
   <div class="form-group">
-      <%= label_tag :first_name %><br />
-      <%= text_field_tag :first_name,  customer.first_name,  class: "form-control form-control-user" %>
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, class: "form-control form-control-user" %>
     </div>
     <div class="form-group">
-        <%= label_tag :last_name %><br />
-        <%= text_field_tag :last_name,  customer.last_name, class: "form-control form-control-user" %>
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, class: "form-control form-control-user" %>
       </div>
         <div class="form-group">
-        <%= label_tag :adress %><br />
-        <%= text_field_tag :adress,  customer.last_name, class: "form-control form-control-user" %>
+        <%= f.label :adress %><br />
+        <%= f.text_field :adress, class: "form-control form-control-user" %>
       </div>
       <div class="form-group">
-        <%= label_tag :email %><br />
-        <%= email_field_tag :email,  customer.email, class: "form-control form-control-user" %>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class: "form-control form-control-user" %>
       </div>
           <div class="form-group">
-        <%= label_tag :mobile %><br />
-        <%= text_field_tag :mobile,  customer.mobile,  class: "form-control form-control-user" %>
+        <%= f.label :mobile %><br />
+        <%= f.text_field :mobile, class: "form-control form-control-user" %>
       </div>
+   <div class="modal-footer">
+        <div class="actions">
+            <%= f.submit "Edit customer", class: "btn btn-primary btn-user btn-block" %>
+        </div>
+      </div>
+
+      <% end %>
 
         
       
