@@ -33,27 +33,8 @@ class RolepermissionsController < ApplicationController
   def create
     @screens = Screen.all
     @roles = Role.all
-    params[:screens].each do |screen|
-    unless screen == nil
-      screenId = screen[1...-1].to_i
-      roleId = screen[1...-1].last.to_i
-      select_screen = Screen.find(screenId)
-      select_role = Role.find(roleId)
-        unless select_role.screens.include?(select_screen)
-          Rolepermission.create(role: select_role, screen: select_screen)
-        end
-      end
-    end
+    Rolepermission.roleperm(params[:screens])
     redirect_to root_path, notice: 'Les permissions ont bien été prises en compte.'
-  #  respond_to do |format|
-  #    if @rolepermission.save
-  #      format.html { redirect_to @rolepermission, notice: 'Rolepermission was successfully created.' }
-  #      format.json { render :show, status: :created, location: @rolepermission }
-  #    else
-  #      format.html { render :new }
-  #      format.json { render json: @rolepermission.errors, status: :unprocessable_entity }
-  #    end
-  #  end
   end
 
   # PATCH/PUT /rolepermissions/1

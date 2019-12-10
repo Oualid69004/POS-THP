@@ -30,14 +30,12 @@ class TicketsController < ApplicationController
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json
   def update
-    respond_to do |format|
-      if @ticket.update(ticket_params)
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ticket }
-      else
-        format.html { render :edit }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
-      end
+    if params[:id] == '1'
+      @ticket = Ticket.purshas(current_user)
+      redirect_to purshas_path
+    else
+      @ticket = Ticket.sales(current_user)
+      redirect_to sales_path
     end
   end
 
