@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require fontawesome-free/css/all.min
  *= require assets/stylesheets/sb-admin-2.min
  *= require datatables/dataTables.bootstrap4.min
  */
