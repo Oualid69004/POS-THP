@@ -20,6 +20,7 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers/1/edit
   def edit
+    @suppliers = Supplier.all
   end
 
   # POST /suppliers
@@ -38,15 +39,10 @@ class SuppliersController < ApplicationController
   # PATCH/PUT /suppliers/1
   # PATCH/PUT /suppliers/1.json
   def update
-    respond_to do |format|
-      if @supplier.update(supplier_params)
-        format.html { redirect_to @supplier, notice: 'Supplier was successfully updated.' }
-        format.json { render :show, status: :ok, location: @supplier }
-      else
-        format.html { render :edit }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
-      end
-    end
+    
+       @supplier.update(supplier_params)
+       redirect_to suppliers_path
+   
   end
 
   # DELETE /suppliers/1
