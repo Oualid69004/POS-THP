@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'paymentout/index'
+  get 'paymentin/index'
   root 'static_page#index'
   resources :static_page, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations" }

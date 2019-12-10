@@ -16,3 +16,7 @@
  *= require assets/stylesheets/sb-admin-2.min
  *= require datatables/dataTables.bootstrap4.min
  */
+
+.bg-tickets{
+  background-color: #E9E9E9;
+}
