@@ -1,5 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Suppliers") }
 
   # GET /suppliers
   # GET /suppliers.json
@@ -29,11 +30,11 @@ class SuppliersController < ApplicationController
       name: params[:name],
       adress: params[:adress],
       email: params[:email],
-      mobile: params[:mobile], 
+      mobile: params[:mobile],
     )
     redirect_to suppliers_path
   end
- 
+
 
   # PATCH/PUT /suppliers/1
   # PATCH/PUT /suppliers/1.json

@@ -28,12 +28,6 @@ screens = [
   "Purshas",
   "Sales"
 ]
-screens.each do |screen|
-  Screen.create(
-    name: screen,
-    url: 'url',
-  )
-end
 
 roles = ["admin","employee", "manager"]
  roles.each do |role|
@@ -42,6 +36,18 @@ roles = ["admin","employee", "manager"]
     )
      p "Roles created"
  end
+
+ screens.each do |screen|
+   objscreen = Screen.create(
+     name: screen,
+     url: 'url',
+   )
+   Rolepermission.create(
+     role: Role.first,
+     screen: objscreen
+   )
+ end
+
 10.times do |category|
     Category.create(
      name: Faker::Name.name,

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Companies") }
 
   # GET /companies
   # GET /companies.json

@@ -1,0 +1,8 @@
+var e = document.getElementsByClassName('custom-select')[0];
+var roleId = e.options[e.selectedIndex].value;
+console.log(roleId);
+var table = document.getElementById('tablerole');
+while (table.firstChild) {
+    table.removeChild(table.firstChild);
+  };
+table.insertAdjacentHTML('afterbegin', '<%=j render "checkbox", screens: @screens%>');

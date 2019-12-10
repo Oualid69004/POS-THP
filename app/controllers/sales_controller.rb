@@ -1,4 +1,6 @@
 class SalesController < ApplicationController
+  before_action -> { as_access?("Sales") }
+
   def index
     @categories = current_user.company.categories.all
     @memory = current_user.memory

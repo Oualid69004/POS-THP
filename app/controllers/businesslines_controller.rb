@@ -1,5 +1,6 @@
 class BusinesslinesController < ApplicationController
   before_action :set_businessline, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Products") }
 
   # GET /businesslines
   # GET /businesslines.json

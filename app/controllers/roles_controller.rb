@@ -1,5 +1,6 @@
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
+  before_action -> { as_access?("Roles") }
 
   # GET /roles
   # GET /roles.json
@@ -31,7 +32,7 @@ class RolesController < ApplicationController
     )
 
       redirect_to roles_path
-   
+
   end
 
   # PATCH/PUT /roles/1
@@ -55,7 +56,7 @@ class RolesController < ApplicationController
     @role.destroy
 
     redirect_to roles_path
- 
+
   end
 
   private
