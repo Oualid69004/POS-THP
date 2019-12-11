@@ -34,10 +34,10 @@ class CustomersController < ApplicationController
     )
     if @customer.save
       flash[:success] = "A customer was created !"
-      redirect_to root_path
+      redirect_to customers_path
     else
       flash[:error] = @user.errors.full_message.to_sentence
-      redirect_to root_path
+      redirect_to customers_path
     end
   end
 
