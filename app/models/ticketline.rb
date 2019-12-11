@@ -1,5 +1,5 @@
 class Ticketline < ApplicationRecord
-  validates :reference_ticket :presence => true, :on => :save
+
   validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
 
 
