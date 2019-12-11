@@ -37,7 +37,9 @@
             <td><%= employee.email %></td>
             <td><%= employee.role.name %></td>
             
-            <td><center><a href="<%= employee_path(employee.id) %>" data-confirm='Are you sure ?' data-method='delete'><i class="fas fa-user-slash"></i></a></center></td>
+           <td><%= link_to 'Show', employee ,class: "btn btn-warning" %></td>
+            <td><%= link_to 'Edit', edit_employee_path(employee) ,class: "btn btn-warning" %></td>
+            <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
           </tr>
           <% end %>
         </tbody>
