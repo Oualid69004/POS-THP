@@ -3,9 +3,9 @@ class SalesController < ApplicationController
 
   def index
     @categories = current_user.company.categories.all
-    @memory = current_user.memory
+    @memory = current_user.memory_sale
     @globalprice = 0
-    current_user.memory.ticketlines.each do |ticketline|
+    current_user.memory_sale.ticketlines.each do |ticketline|
       @globalprice += ticketline.product.pricesell.to_i * ticketline.units.to_i
     end
   end
@@ -22,13 +22,13 @@ class SalesController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @already_here = false
-    current_user.memory.ticketlines.each do |ticketline|
+    current_user.memory_sale.ticketlines.each do |ticketline|
       if ticketline.product.name == @product.name
         @already_here = true
         ticketline.update(units: ticketline.units + 1)
       end
     end
-    @already_here == false ? Ticketline.create(memory: current_user.memory, product: @product) : 0
+    @already_here == false ? Ticketline.create(memory_sale: current_user.memory_sale, product: @product) : 0
     respond_to do |format|
       format.html { redirect_to purshas_path}
       format.js {}

@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.belongs_to :company
       t.belongs_to :role
       t.belongs_to :memory
+      t.belongs_to :memory_sale
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

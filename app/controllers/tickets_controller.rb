@@ -24,7 +24,9 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-
+    Ticket.sales(current_user)
+    flash[:success] = 'Votre vente a bien été prit en compte'
+    redirect_to sales_path
   end
 
   # PATCH/PUT /tickets/1

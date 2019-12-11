@@ -38,8 +38,8 @@
         <div class="text-right">
           <h4>Total : </h4>
           <h3><span id="globalprice"><%= @globalprice %></span> €</h3>
-            <%= link_to 'Save', ticketlines_path, class: 'btn btn-success px-4', data: {method: :post, params: {:id => '2'}.to_param} %>
-            <%= link_to 'Reset', memory_path(@memory.id), class:'btn btn-danger px-4', data: {method: :delete, params: {:from => '2'}.to_param, confirm: 'Delete all products of your list ?'} %>
+            <%= link_to 'Save', tickets_path, class: 'btn btn-success px-4', data: {method: :post, params: {:id => 2}.to_param} %>
+            <%= link_to 'Reset', memory_sale_path(@memory.id), class:'btn btn-danger px-4', data: {method: :delete, params: {:from => 2}.to_param, confirm: 'Delete all products of your list ?'} %>
         </div>
       </div>
     </div>

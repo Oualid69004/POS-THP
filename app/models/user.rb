@@ -8,14 +8,15 @@ class User < ApplicationRecord
          belongs_to :role, optional: true
          belongs_to :ticket, optional: true
          belongs_to :memory, optional: true
+         belongs_to :memory_sale, optional: true
 
   after_create :welcome_send , :welcome_send_employee
-         
+
   def welcome_send
    UserMailer.welcome_email(self).deliver_now
   end
-   
-         
+
+
   def welcome_send_employee
    UserMailer.welcome_employee(self).deliver_now
   end

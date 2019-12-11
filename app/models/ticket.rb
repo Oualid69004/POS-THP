@@ -29,7 +29,7 @@ class Ticket < ApplicationRecord
     def self.sales(current_user)
       @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15))
       globalprice = 0
-      current_user.memory.ticketlines.each do |ticketline|
+      current_user.memory_sale.ticketlines.each do |ticketline|
         ticketline_price = ticketline.product.pricesell.to_i * ticketline.units.to_i
         globalprice += ticketline_price
         if ticketline.product.stockvolume == 1
@@ -38,7 +38,7 @@ class Ticket < ApplicationRecord
           product = current_user.company.stockcurrent.products.find(ticketline.product.id)
           product.update(stockvolume: product.stockvolume -= ticketline.units)
         end
-        ticketline.update(ticket: @ticket, memory: nil, price: ticketline_price)
+        ticketline.update(ticket: @ticket, memory_sale: nil, price: ticketline_price)
         current_user.company.update(capital: (current_user.company.capital += ticketline_price))
       end
       @ticket.update(ticketTotal: globalprice)

@@ -11,7 +11,7 @@ class CreateTicketlines < ActiveRecord::Migration[5.2]
       t.belongs_to :product, index: true
       t.belongs_to :ticket, index: true
       t.belongs_to :memory, index: true
-
+      t.belongs_to :memory_sale, index: true
       t.timestamps
     end
   end

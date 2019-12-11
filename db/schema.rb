@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_132252) do
+ActiveRecord::Schema.define(version: 2019_12_11_135253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,13 @@ ActiveRecord::Schema.define(version: 2019_12_05_132252) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "memory_sales", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memory_sales_on_user_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -214,9 +221,11 @@ ActiveRecord::Schema.define(version: 2019_12_05_132252) do
     t.bigint "product_id"
     t.bigint "ticket_id"
     t.bigint "memory_id"
+    t.bigint "memory_sale_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["memory_id"], name: "index_ticketlines_on_memory_id"
+    t.index ["memory_sale_id"], name: "index_ticketlines_on_memory_sale_id"
     t.index ["product_id"], name: "index_ticketlines_on_product_id"
     t.index ["ticket_id"], name: "index_ticketlines_on_ticket_id"
   end
@@ -254,6 +263,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_132252) do
     t.bigint "company_id"
     t.bigint "role_id"
     t.bigint "memory_id"
+    t.bigint "memory_sale_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -262,6 +272,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_132252) do
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["memory_id"], name: "index_users_on_memory_id"
+    t.index ["memory_sale_id"], name: "index_users_on_memory_sale_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end
