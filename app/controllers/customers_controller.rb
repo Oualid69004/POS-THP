@@ -36,6 +36,7 @@ class CustomersController < ApplicationController
       flash[:success] = "A customer was created !"
       redirect_to root_path
     else
+      flash[:error] = @user.errors.full_message.to_sentence
       redirect_to root_path
     end
   end

@@ -35,8 +35,10 @@ class ProductsController < ApplicationController
     )
     if Product.find_by(name: params[:name]) == nil
       product.save
+      flash[:success] = "The new product #{params[:name]} was added to your stock"
     else
-      Product.find_by(name: params[:name]).update(stockvolume: Product.find_by(name: params[:name]).stockvolume + 1)
+      Product.find_by(name: params[:name]).update(stockvolume: Product.find_by(name: params[:name]).stockvolume + params[:stockvolume].to_i)
+      flash[:success] = "The quantity of #{params[:name]} was succesfully updated"
     end
     redirect_to products_path
   end

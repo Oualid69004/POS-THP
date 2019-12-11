@@ -26,9 +26,11 @@ class TicketlinesController < ApplicationController
   def create
       if params[:id] == '1'
         Ticket.purshas(current_user)
+        flash[:success] = 'Votre commande a bien été prit en compte'
         redirect_to purshas_path
       else
         Ticket.sales(current_user)
+        flash[:error] = 'Votre vente a bien été prit en compte'
         redirect_to sales_path
       end
   end

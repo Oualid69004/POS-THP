@@ -26,12 +26,17 @@ class RolesController < ApplicationController
   # POST /roles
   # POST /roles.json
   def create
-    Role.create(
+    @role = Role.new(
       name: params[:name]
-
     )
-
-      redirect_to roles_path
+    if @role.save
+      flash[:success] = "A role was created !"
+      redirect_to root_path
+    else
+      flash[:error] = @role.errors.full_message.to_sentence
+      redirect_to root_path
+    end
+    redirect_to roles_path
 
   end
 

@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
-    User.create(
+    @user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
@@ -32,7 +32,13 @@ class EmployeesController < ApplicationController
       company: current_user.company,
       role: Role.find(params[:role])
     )
-    redirect_to employees_path
+    if @user.save
+      flash[:success] = 'A new employee was add to your company'
+      redirect_to employees_path
+    else
+      flash[:error] = @user.errors.full_message.to_sentence
+      redirect_to employees_path
+    end
   end
 
   # PATCH/PUT /employees/1
