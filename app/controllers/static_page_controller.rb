@@ -23,6 +23,8 @@ class StaticPageController < ApplicationController
 
   def create
     company = Company.create(name: params[:company], businessline: Businessline.find(params[:businessline]))
+    stock = Stockcurrent.create(company: company)
+    company.update(stockcurrent: stock)
     current_user.update(company: company, role: Role.find(params[:role]))
     flash[:success] = 'Welcome to PosTHP'
     redirect_to root_path
