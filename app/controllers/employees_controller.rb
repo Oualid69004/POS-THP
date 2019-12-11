@@ -28,7 +28,7 @@ class EmployeesController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      password: params[:password],
+      password: '123456',
       company: current_user.company,
       role: Role.find(params[:role])
     )
