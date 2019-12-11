@@ -1,42 +1,52 @@
+<div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Edit your customer</h1>
+                  </div>
 <%= form_with(model: customer, local: true) do |form| %>
-  <% if customer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-
-      <ul>
-        <% customer.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name,  class: "form-control form-control-user" %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, class: "form-control form-control-user" %>
   </div>
 
   <div class="field">
     <%= form.label :adress %>
-    <%= form.text_field :adress %>
+    <%= form.text_field :adress, class: "form-control form-control-user" %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control form-control-user" %>
   </div>
 
   <div class="field">
     <%= form.label :mobile %>
-    <%= form.text_field :mobile %>
+    <%= form.text_field :mobile, class: "form-control form-control-user" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

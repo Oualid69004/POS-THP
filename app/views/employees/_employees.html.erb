@@ -37,7 +37,6 @@
             <td><%= employee.email %></td>
             <td><%= employee.role.name %></td>
             
-           <td><%= link_to 'Show', employee ,class: "btn btn-warning" %></td>
             <td><%= link_to 'Edit', edit_employee_path(employee) ,class: "btn btn-warning" %></td>
             <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
           </tr>
