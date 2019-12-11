@@ -24,15 +24,9 @@ class TicketlinesController < ApplicationController
   # POST /ticketlines
   # POST /ticketlines.json
   def create
-      if params[:id] == '1'
-        Ticket.purshas(current_user)
-        flash[:success] = 'Votre commande a bien été prit en compte'
-        redirect_to purshas_path
-      else
-        Ticket.sales(current_user)
-        flash[:error] = 'Votre vente a bien été prit en compte'
-        redirect_to sales_path
-      end
+    Ticket.purshas(current_user)
+    flash[:success] = 'Votre commande a bien été prit en compte'
+    redirect_to purshas_path
   end
 
   # PATCH/PUT /ticketlines/1

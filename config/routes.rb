@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   resources :paymentin, only: [:index]
   resources :paymentout, only: [:index]
-  resources :memory, only: [:destroy, :update]
+  resources :memory_sale, only: [:destroy]
+  resources :memory, only: [:destroy]
   resources :purshas
   resources :sales
   resources :receipts

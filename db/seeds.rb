@@ -122,6 +122,7 @@ Company.all.each do |company|
 end
 c = Company.create(name: 'adminCompany', businessline: Businessline.last, capital: 1000)
 memory = Memory.create
+memory_sales = MemorySale.create
 admin = User.create(
   first_name: 'admin',
   last_name: 'admin',
@@ -129,9 +130,11 @@ admin = User.create(
   password: '123456',
   company: c,
   role: Role.first,
-  memory: memory
+  memory: memory,
+  memory_sale: memory_sales
 )
 memory.update(user: admin)
+memory_sales.update(user: admin)
 stock = Stockcurrent.create(company: c)
 c.update(stockcurrent: stock)
 legumes = Category.create(name: 'legumes')

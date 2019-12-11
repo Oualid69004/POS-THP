@@ -1,7 +1,7 @@
 <h1 class="h3 mb-2 text-gray-800">Products of <%= category.name %></h1><br>
 <div class="row">
 <% category.products.each do |product| %>
-  <%= link_to purshas_path, id: "link-card-product",class: 'col-xl-3 col-md-6 mb-4', style: 'cursor: pointer;', data: { method: :post, remote: true, params: {:product_id => product.id}.to_param} do %>
+  <%= link_to sales_path, id: "link-card-product",class: 'col-xl-3 col-md-6 mb-4', style: 'cursor: pointer;', data: { method: :post, remote: true, params: {:product_id => product.id}.to_param} do %>
     <div class="card border-left-warning shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">

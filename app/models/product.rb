@@ -7,4 +7,5 @@ class Product < ApplicationRecord
     has_many :ticketlines
     has_many :tickets, through: :ticketlines
     has_many :memories, through: :ticketlines
+    has_many :memory_sales, through: :ticketlines
 end
