@@ -1,4 +1,8 @@
 class Company < ApplicationRecord
+    validates :name, :address, :mobile :presence => true
+
+
+
     belongs_to :businessline
     has_many :branches
     has_many :customers
