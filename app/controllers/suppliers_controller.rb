@@ -38,12 +38,11 @@ class SuppliersController < ApplicationController
     )
     if @supplier.save
       flash[:success] = "A supplier was created !"
-      redirect_to root_path
+      redirect_to suppliers_path
     else
       flash[:error] = @supplier.errors.full_message.to_sentence
-      redirect_to root_path
+      redirect_to suppliers_path
     end
-    redirect_to suppliers_path
   end
 
 
