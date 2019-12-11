@@ -25,10 +25,15 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-      Category.create(
+      @category = Category.new(
         name: params[:name],
         logo: params[:logo]
       )
+      if @category.save
+        flash[:success] = "Category '#{@category.name}' was successfully created"
+      else
+        flash[:error] = @user.errors.full_message.to_sentence
+      end
       redirect_to categories_path
 
   end

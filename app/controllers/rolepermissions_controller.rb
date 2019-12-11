@@ -34,7 +34,7 @@ class RolepermissionsController < ApplicationController
     @screens = Screen.all
     @roles = Role.all
     Rolepermission.roleperm(params[:screens])
-    redirect_to root_path, notice: 'Les permissions ont bien été prises en compte.'
+    flash[:success] = 'Les permissions ont bien été misent à jour'
   end
 
   # PATCH/PUT /rolepermissions/1

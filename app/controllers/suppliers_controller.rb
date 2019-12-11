@@ -30,12 +30,19 @@ class SuppliersController < ApplicationController
   # POST /suppliers
   # POST /suppliers.json
   def create
-    Supplier.create(
+    @supplier = Supplier.new(
       name: params[:name],
       adress: params[:adress],
       email: params[:email],
       mobile: params[:mobile],
     )
+    if @supplier.save
+      flash[:success] = "A supplier was created !"
+      redirect_to root_path
+    else
+      flash[:error] = @supplier.errors.full_message.to_sentence
+      redirect_to root_path
+    end
     redirect_to suppliers_path
   end
 
@@ -46,7 +53,7 @@ class SuppliersController < ApplicationController
 
        @supplier.update(supplier_params)
        redirect_to suppliers_path
-   
+
   end
 
   # DELETE /suppliers/1
