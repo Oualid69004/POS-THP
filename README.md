@@ -60,8 +60,5 @@ Il faudra une api de mailer (SENGRID), de paiement (stripe), le scrapping pour r
 
 Travailler sur le Cloud : Déplacer les systèmes de gestion des ventes dans le Cloud qui offre tous les avantages du logiciel.
 
-<<<<<<< HEAD
 Voici le lien de notre application notre lien : https://thppos.herokuapp.com/
-=======
-Voici le lien de notre application notre lien : https://thppos.herokuapp.com/
->>>>>>> master
+
