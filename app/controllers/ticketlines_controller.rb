@@ -24,7 +24,7 @@ class TicketlinesController < ApplicationController
   # POST /ticketlines
   # POST /ticketlines.json
   def create
-    @amount = 500
+    @amount = 5
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
