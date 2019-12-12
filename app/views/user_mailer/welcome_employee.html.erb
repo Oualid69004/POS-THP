@@ -4,14 +4,17 @@
   <meta content=‘text/html; charset=UTF-8’ http-equiv=‘Content-Type’ />
 </head>
 <body>
-<h1>bienvenue chez nous !</h1>
+<h1>Bienvenue chez nous !</h1>
 <p>
-  vous venez d'etre inscrit  par l'admin de la compagnie THP-POS
-  du site https://thppos.herokuapp.com/users/sign_in 
-  en utilisant l’e-mail suivant : <%= @user.email %> 
+  Vous venez d'etre inscrit  par l'admin de la compagnie <%= current_user.company %>
+  vous a ajouter en tant que collaborateur de la plateforme PosTHP
+  en utilisant l’e-mail suivant : <%= @user.email %>
   password : '123456'
 </p>
-
-<p> À très vite sur https://thppos.herokuapp.com !
+<p>
+  Nous vous invitons <strong><a href="<%= edit_user_registration_path %>">changer dès a présent votre mot de passe</a></strong>
+  pour assurer la sécurité de votre compte.
+</p>
+<p> À très vite sur <a href="https://posthp.herokuapp.com/">https://posthp.herokuapp.com/</a> !
 </body>
 </html>
