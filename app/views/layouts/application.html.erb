@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <% unless current_page?('/static_page/new') || !user_signed_in?%>
+
+    <% unless current_page?(new_static_page_path) || !user_signed_in? || current_page?(homes_path)  %>
+
     <div id="page-top">
 
       <!-- Page Wrapper -->
@@ -42,7 +44,7 @@
           <li class="nav-item active">
              <%= link_to root_path,  class: "nav-link" do %>
               <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span></a>
+              <span>Dashboard</span>
           </li>
           <%end%>
 
@@ -307,3 +309,4 @@
     <% end %>
   </body>
 </html>
+

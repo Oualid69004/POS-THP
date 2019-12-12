@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_home, only: [:show, :edit, :update, :destroy]
 
   # GET /homes

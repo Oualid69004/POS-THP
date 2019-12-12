@@ -2,7 +2,10 @@ class User < ApplicationRecord
   after_create :welcome_send, :user_stock
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  validates :first_name, :last_name, :presence => true
+
+  #validates :first_name, :last_name, :presence => true
+  #validates :email, :encrypted_password, :confirmation => true, :uniqueness => true
+ 
 
 
 
