@@ -39,12 +39,13 @@ class TicketlinesController < ApplicationController
       currency: 'eur',
     })
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
 
     Ticket.purshas(current_user)
     flash[:success] = 'Votre commande a bien été prit en compte'
     redirect_to purshas_path
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
   end
 
   # PATCH/PUT /ticketlines/1
