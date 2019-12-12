@@ -1,6 +1,6 @@
 class Ticket < ApplicationRecord
-      
-  
+
+
     belongs_to :company, optional: true
     has_many :users
     has_many :customers
@@ -24,6 +24,7 @@ class Ticket < ApplicationRecord
         end
         ticketline.update(ticket: @ticket, memory: nil, price: ticketline_price)
         current_user.company.update(capital: (current_user.company.capital -= ticketline_price.to_i))
+        current_user.company.stockcurrent.update(total: current_user.company.stockcurrent.total + ticketline_price, units: current_user.company.stockcurrent.units + quantity)
       end
       @ticket.update(ticketTotal: globalprice)
     end
@@ -42,6 +43,7 @@ class Ticket < ApplicationRecord
         end
         ticketline.update(ticket: @ticket, memory_sale: nil, price: ticketline_price)
         current_user.company.update(capital: (current_user.company.capital += ticketline_price))
+        current_user.company.stockcurrent.update(total: current_user.company.stockcurrent.total - ticketline_price, units: current_user.company.stockcurrent.units - ticketline.units.to_i)
       end
       @ticket.update(ticketTotal: globalprice)
     end
