@@ -25,7 +25,7 @@ class TicketlinesController < ApplicationController
   # POST /ticketlines.json
   def create
 
-    @amount = 5
+    @amount = 500
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -38,14 +38,15 @@ class TicketlinesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
-  
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to purshas_path
-
     Ticket.purshas(current_user)
     flash[:success] = 'Votre commande a bien été prit en compte'
     redirect_to purshas_path
+
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to purshas_path
+
+   
   end
 
   # PATCH/PUT /ticketlines/1
