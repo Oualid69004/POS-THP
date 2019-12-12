@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-    validates :name, :address, :mobile, :presence => true
+    # validates :name, :address, :mobile, :presence => true
 
 
 
