@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :homes
+  resources :homes, only: [:index]
   authenticated :user do
     root to: "static_page#index"
   end
