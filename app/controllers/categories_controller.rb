@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.company.categories
   end
 
   # GET /categories/1
@@ -31,6 +31,8 @@ class CategoriesController < ApplicationController
       )
       if @category.save
         flash[:success] = "Category '#{@category.name}' was successfully created"
+        CompanyCategory.create(company: current_user.company, category: @category)
+
       else
         flash[:error] = @user.errors.full_message.to_sentence
       end

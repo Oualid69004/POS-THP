@@ -158,9 +158,9 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Stocklevel</h6>
                 </div>
-                <% if @stock_percent <= @stock.critical_threshold %>
+                <% if @stock_percent <= @stock.critical_threshold || @stock.units == 0%>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock_percent.to_i %>%</span></h4>
+                  <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock.units == 0 ? 0 : @stock_percent.to_i %>%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @stock_percent %>%" aria-valuenow="<%= @stock_percent %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
