@@ -262,8 +262,8 @@ end
 
 
 100.times do
-  purchase = product.purchases.new
-  purchase.purchased_on = Faker::Date.between(from: 1.month.ago,to: Date.today);
-  purchase.purchased_price = product.price * (1 + (([true, false].sample ? -1 : 1) * rand(10)/100))
-  purchase.save
+  purshase = product.purchases.new
+  purshase.purshased_on = Faker::Date.between(from: 1.month.ago,to: Date.today);
+  purshase.purshased_price = product.price * (1 + (([true, false].sample ? -1 : 1) * rand(10)/100))
+  purshase.save
 end
