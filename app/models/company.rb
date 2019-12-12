@@ -1,9 +1,5 @@
 class Company < ApplicationRecord
-<<<<<<< HEAD
     #validates :name, :address, :mobile, :presence => true
-=======
-    validates :name, :address, :mobile, :presence => true
->>>>>>> master
 
 
 
