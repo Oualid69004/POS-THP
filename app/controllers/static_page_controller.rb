@@ -15,7 +15,6 @@ class StaticPageController < ApplicationController
     end
     @stock_percent = @stock_volume.to_f / (@stock.stockmax.to_f - @stock.stockmin.to_f) * 100
     @margin = pricesell - @stock_value
-
   end
 
   def new
