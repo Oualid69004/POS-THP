@@ -24,6 +24,7 @@ class TicketlinesController < ApplicationController
   # POST /ticketlines
   # POST /ticketlines.json
   def create
+    
     Ticket.purshas(current_user)
     flash[:success] = 'Votre commande a bien été prit en compte'
     redirect_to purshas_path
