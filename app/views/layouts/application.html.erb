@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <% unless current_page?('/static_page/new') || !user_signed_in? %>
+    <% unless current_page?('/static_page/new') || !user_signed_in?%>
     <div id="page-top">
 
       <!-- Page Wrapper -->
@@ -303,6 +303,7 @@
     </div>
 
     <%else%>
+      <%= render 'layouts/flash'%>
       <%= yield %>
     <% end %>
   </body>
