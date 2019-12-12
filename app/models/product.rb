@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
+
    # validates :name, :pricesell, :pricebuy, :stockvolume, :reference,  :presence => true
   
   
+
     has_many :typeproducts
     belongs_to :category
     belongs_to :stockcurrent, optional: true
