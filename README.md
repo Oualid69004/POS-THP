@@ -1,3 +1,14 @@
+**TEST**
+=================
+Pour tester l'application :
+- cloner le git
+- bundle install,
+- rails db:create
+- rails db:migrate
+- rails db:seed
+- Se connecter a l'espace test grâce aux identifiants suivants:
+    email : admin@admin.admin
+    mdp : 123456
 
 **DESCRIPTION**
 =================
@@ -60,5 +71,4 @@ Il faudra une api de mailer (SENGRID), de paiement (stripe), le scrapping pour r
 
 Travailler sur le Cloud : Déplacer les systèmes de gestion des ventes dans le Cloud qui offre tous les avantages du logiciel.
 
-Voici le lien de notre application notre lien : https://thppos.herokuapp.com/
-
+Voici le lien de notre application notre lien : https://posthp.herokuapp.com/

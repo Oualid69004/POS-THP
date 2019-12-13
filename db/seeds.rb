@@ -140,6 +140,7 @@ end
 
 
 supplier = Company.create(name: 'supplier', address: '143, cours Lafayette, Lyon', mobile: '0403020102', businessline: Businessline.last)
+supp = Supplier.create(name: 'supplier', company: supplier)
 supplierstock = Stockcurrent.create(company: supplier, stockmin: 5, stockmax: 150)
 supplier.update(stockcurrent: supplierstock)
 legumessupplier = Category.create(name: 'legumes')

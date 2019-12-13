@@ -80,6 +80,21 @@
                 </div>
               </div>
             </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Receipt</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @receipt %> €</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-cubes fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- Content Row -->
           <div hidden class="row">
@@ -158,9 +173,9 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Stocklevel</h6>
                 </div>
-                <% if @stock_percent <= @stock.critical_threshold %>
+                <% if @stock_percent <= @stock.critical_threshold || @stock.units == 0%>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock_percent.to_i %>%</span></h4>
+                  <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock.units == 0 ? 0 : @stock_percent.to_i %>%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @stock_percent %>%" aria-valuenow="<%= @stock_percent %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>

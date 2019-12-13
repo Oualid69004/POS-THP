@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.string "address"
     t.string "logo"
     t.string "mobile"
-    t.integer "capital"
+    t.integer "capital", default: 0
     t.bigint "businessline_id"
     t.bigint "stockcurrent_id"
     t.datetime "created_at", null: false
@@ -180,8 +180,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.float "cost"
     t.float "total", default: 0.0
     t.float "units", default: 0.0
-    t.integer "stockmin"
-    t.integer "stockmax"
+    t.integer "stockmin", default: 0
+    t.integer "stockmax", default: 1000
     t.integer "critical_threshold", default: 20
     t.integer "warning_threshold", default: 50
     t.bigint "company_id"
@@ -241,7 +241,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "discount"
-    t.string "status"
+    t.integer "status"
     t.string "ticketCost"
     t.date "ticketDate"
     t.string "ticketNumber"
