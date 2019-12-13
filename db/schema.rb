@@ -292,7 +292,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.index ["memory_sale_id"], name: "index_users_on_memory_sale_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
->>>>>>> 36c54aaa529e87bd6d44b77f916a5d88f25e5d0e
+
   end
 
 end
