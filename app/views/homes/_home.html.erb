@@ -16,7 +16,10 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+  <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 
@@ -25,7 +28,9 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+
+
+  <nav class="navbar navbar-light bg-light static-top ">
     <div class="container">
       <%=link_to 'POSThp', homes_path, class:"navbar-brand" %>
        <%=link_to 'Sign In', user_session_path, class:"btn btn-primary" %>
@@ -33,13 +38,13 @@
   </nav>
 
   <!-- Masthead -->
-  <header class="masthead text-white text-center">
+  <header class="masthead text-white text-center ">
     <div class="overlay"clip-path: inset(5% 20%% 0 10%); ></div>
 
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Manage your business more easily!</h1>
+          <span><h2 class="shake show-on-scroll mb-5">Manage your business more easily!</h2></span>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
@@ -54,6 +59,7 @@
         </div>
       </div>
     </div>
+  </div>
   </header>
 
   <!-- Icons Grid -->
@@ -63,10 +69,10 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <i class="icon-screen-desktop m-auto text-primary swing"></i>
             </div>
             <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This website will look great on any device, no matter the size!</p>
+            <p class="lead mb-0 flash show-on-scroll ">This website will look great on any device, no matter the size! PHP POS can be accessed via multiple devices, including desktops, laptops and smartphones and users can operate it across multiple retail locations. </p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -75,7 +81,7 @@
               <i class="icon-layers m-auto text-primary"></i>
             </div>
             <h3>Manage your business</h3>
-            <p class="lead mb-0">Featuring the latest build of the new website</p>
+            <p class="lead mb-0 flash show-on-scroll">POSThp offers many great features such as inventory options, service/product separation, reporting options and many more. It has a clean interface and is an overall quite intuitive website.</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -84,7 +90,7 @@
               <i class="icon-check m-auto text-primary"></i>
             </div>
             <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use for your team and employees</p>
+            <p class="lead mb-0 flash show-on-scroll">With the inventory management feature, users can add items to their list of available stock and track sales,receipt printer.. including a touchscreen.</p>
           </div>
         </div>
       </div>
@@ -92,28 +98,31 @@
   </section>
 
   <!-- Image Showcases -->
-  <section class="showcase">
+  <section class="showcase ">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('das.png') %>');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img  " style="background-image: url('<%= asset_path('das.png') %>');"></div>
+
+
+
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use our website, you know that the webpage will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          <p class="lead mb-0 bounceInLeft show-on-scroll">Many point of sale system are available in the market, choose very carefully best suitable for your business. Point of sale system are needed to be faster, easier and cheaper to install. </p>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('<%= asset_path('purshas.png') %>');"></div>
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('<%= asset_path('receipt.png') %>');"></div>
         <div class="col-lg-6 my-auto showcase-text">
           <h2>Come on and sign up !</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility features, POSThp is leading the way in mobile responsive web development! Our developers added news functions to the Website. </p>
+          <p class="lead mb-0 bounceInRight show-on-scroll">Newly improved, and full of great utility features, POSThp is leading the way in mobile responsive web development! Our developers added news functions to the Website. </p>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('stock.png') %>');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img bounce" style="background-image: url('<%= asset_path('stock.png') %>');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Easy to manage your employees, your suppliers and your customers! Let's Sign up and join our website </h2>
-          <p class="lead mb-0"></p>
+          <h2>Easy to manage   </h2>
+          <p class="lead mb-0 bounceInLeft show-on-scroll">Deployment of the point of sale system is needed to be simple. Point of sale system eliminates human errors and save money in the long term. Point of sale system monitors your sales records and alert you when stock is running low.</p>
         </div>
       </div>
     </div>
@@ -122,27 +131,27 @@
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
+      <h2 class="mb-5 bounceInLeft show-on-scroll">What people are saying...</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-1.jpg') %>" alt="">
             <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            <h5><p class="font-weight-light mb-0">"This is fantastic! Thanks so much, it's so easy to manage my business!"</p></h5>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-2.jpg') %>" alt="">
             <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            <h5><p class="font-weight-light mb-0">""One of the great pos is POSThp. This has been our pos for years now and done a lot of help for my business success! It's very useful and reliable in our everyday transactions."</p><h5>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-3.jpg') %>" alt="">
             <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            <h5><p class="font-weight-light mb-0">"All of the features POSThp provides are working great in my stores."</p></h5>
           </div>
         </div>
       </div>
@@ -160,7 +169,7 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
              <div class="form-row">
-               <%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-block btn-lg btn-primary' %>
+               <%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-block btn-lg btn-primary   ' %>
               </div>
             </div>
 
@@ -179,9 +188,68 @@
           </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="
+  vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+
+   var scroll = window.requestAnimationFrame ||
+            function(callback){ window.setTimeout(callback, 1000/60)};
+    var elementsToShow = document.querySelectorAll('.show-on-scroll');
+    function loop() {
+
+  elementsToShow.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      element.classList.add('bounceInLeft');      
+      element.classList.add('shake');
+      element.classList.add('flash');
+       element.classList.add('bounceInRight'); 
+      
+
+    } else {
+      element.classList.remove('bounceInLeft');
+      element.classList.remove('shake');
+      element.classList.remove('flash');
+      element.classList.remove('bounceInRight');
+    }
+  });
+
+  scroll(loop);
+}
+   loop();
+   function isElementInViewport(el) {
+  // special bonus for those using jQuery
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+ 
+
+ 
+</script>
+
 
 </body>
 
 </html>
+
+
+
+<div data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
+</div>
+
+
+

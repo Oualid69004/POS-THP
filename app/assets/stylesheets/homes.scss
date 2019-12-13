@@ -1,3 +1,36 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.shake {
+    animation-duration: 9s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+  }
+
+.bounceInLeft {
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
+
+  .flash {
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
+
+  .bounce {
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
+
+  .bounceInRight {
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
+
+ 
+ 
+  
