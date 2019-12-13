@@ -3,17 +3,27 @@ class StaticPageController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
+    @stock = current_user.company.stockcurrent
     @stock_value = 0
     pricesell = 0
     @stock_volume = 0
     @finance_capital = current_user.company.capital
-    current_user.company.stockcurrent.products.each do |product|
+    @stock.products.each do |product|
       @stock_value += product.pricebuy.to_i * product.stockvolume.to_i
       pricesell += product.pricesell.to_i * product.stockvolume.to_i
       @stock_volume += product.stockvolume.to_i
     end
+    @stock_percent = @stock_volume.to_f / (@stock.stockmax.to_f - @stock.stockmin.to_f) * 100
     @margin = pricesell - @stock_value
-
+    @sales_tickets = 0
+    @purshas_tickets = 0
+    current_user.company.tickets.where(tickettype: 'sales').each do |ticket|
+      @sales_tickets = @sales_tickets + ticket.ticketTotal
+    end
+    current_user.company.tickets.where(tickettype: 'purshas').each do |ticket|
+      @purshas_tickets = @purshas_tickets - ticket.ticketTotal
+    end
+    @receipt = @purshas_tickets + @sales_tickets
   end
 
   def new

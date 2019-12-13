@@ -42,7 +42,7 @@ class StockcurrentsController < ApplicationController
   def update
     respond_to do |format|
       if @stockcurrent.update(stockcurrent_params)
-        format.html { redirect_to @stockcurrent, notice: 'Stockcurrent was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Stockcurrent was successfully updated.' }
         format.json { render :show, status: :ok, location: @stockcurrent }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class StockcurrentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stockcurrent_params
-      params.require(:stockcurrent).permit(:idstockcurrent, :cost, :total, :units)
+      params.require(:stockcurrent).permit(:stockmin, :stockmax, :critical_threshold, :warning_threshold)
     end
 end

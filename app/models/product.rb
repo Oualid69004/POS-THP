@@ -1,7 +1,10 @@
 class Product < ApplicationRecord
+
+
     # validates :name, :pricesell, :pricebuy, :stockvolume, :reference,  :presence => true
   
-    
+    has_many :purshases
+
     has_many :typeproducts
     belongs_to :category
     belongs_to :stockcurrent, optional: true
@@ -11,4 +14,5 @@ class Product < ApplicationRecord
     has_many :tickets, through: :ticketlines
     has_many :memories, through: :ticketlines
     has_many :memory_sales, through: :ticketlines
+    has_many :purchases
 end

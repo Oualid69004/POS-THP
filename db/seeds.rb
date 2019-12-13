@@ -48,14 +48,6 @@ roles = ["admin","employee", "manager"]
    )
  end
 
-10.times do |category|
-    Category.create(
-     name: Faker::Name.name,
-     logo: Faker::Company.industry
- )
-    puts "Categories created"
-end
-
 10.times do |businessline|
     Businessline.create(
      name: Faker::Company.industry,
@@ -64,63 +56,7 @@ end
     puts "Businesslines created"
 end
 
-10.times do |company|
-    Company.create(
-     name:   Faker::Name.name,
-     address: Faker::Address.street_address ,
-     logo:   Faker::Cosmere.shard_world,
-     mobile: Faker::Number.leading_zero_number(digits: 10),
-     businessline: Businessline.find(rand(1..10))
-         )
-    puts "Company created"
-end
-10.times do |branch|
-    Branch.create(
-     name:   Faker::Name.name,
-     address: Faker::Address.street_address ,
-     mobile: Faker::Number.leading_zero_number(digits: 10),
-     company: Company.find(rand(1..10))
-         )
-    puts "Branch created"
-end
-10.times do |closedcashes|
-    Closedcash.create(
-     money:   Faker::Number.decimal(l_digits: 2),
-     host:    Faker::Name.name ,
-     branch: Branch.find(rand(1..10))
-         )
-    puts "ClosedCah created"
-end
-10.times do |paymentsuppliers|
-    Paymentsupplier.create(
-    paymentNote:   Faker::Number.decimal(l_digits: 2),
-    paymentValue:  Faker::Number.decimal(l_digits: 2),
-         )
-    puts " paymentsuppliers created"
-end
-10.times do |stockins|
-    Stockin.create(
-        total: Faker::Number.between(from: 0, to: 10000),
-         )
-    puts " stockins created"
-end
-10.times do |stocklevels|
-    Stocklevel.create(
-        location: Faker::Address.building_number,
-        stockmaximum: Faker::Number.between(from: 0, to: 1000),
-        stocksecurity: Faker::Number.between(from: 0, to: 5)         )
-    puts " stocklevels created"
-end
-
-Company.all.each do |company|
-  3.times do
-    CompanyCategory.create(
-      company: company,
-      category: Category.find(rand(1..10))
-    )
-  end
-end
-c = Company.create(name: 'adminCompany', businessline: Businessline.last, capital: 1000)
+c = Company.create(name: 'adminCompany', address: '143, cours Lafayette, Lyon', mobile: '0403020102', businessline: Businessline.last, capital: 1000)
 memory = Memory.create
 memory_sales = MemorySale.create
 admin = User.create(
@@ -135,7 +71,7 @@ admin = User.create(
 )
 memory.update(user: admin)
 memory_sales.update(user: admin)
-stock = Stockcurrent.create(company: c)
+stock = Stockcurrent.create(company: c, stockmin: 5, stockmax: 150)
 c.update(stockcurrent: stock)
 legumes = Category.create(name: 'legumes')
 viandes = Category.create(name: 'viandes')
@@ -150,6 +86,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'tomates').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + a.pricebuy, units: stock.units + 1)
 
   b = Product.new(name: 'courgettes', category: legumes, stockcurrent: stock, pricebuy: 6, pricesell: 7)
   if Product.find_by(name: 'courgettes') == nil
@@ -157,6 +94,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'courgettes').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + b.pricebuy, units: stock.units + 1)
 
   c = Product.new(name: 'steack', category: viandes, stockcurrent: stock, pricebuy: 10, pricesell: 12)
   if Product.find_by(name: 'steack') == nil
@@ -164,6 +102,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'steack').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + c.pricebuy, units: stock.units + 1)
 
   d = Product.new(name: 'jambon', category: viandes, stockcurrent: stock, pricebuy: 5, pricesell: 6)
   if Product.find_by(name: 'jambon') == nil
@@ -171,6 +110,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'jambon').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + d.pricebuy, units: stock.units + 1)
 
   e = Product.new(name: 'tome', category: fromages, stockcurrent: stock, pricebuy: 7, pricesell: 8)
   if Product.find_by(name: 'tome') == nil
@@ -178,6 +118,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'tome').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + e.pricebuy, units: stock.units + 1)
 
   f = Product.new(name: 'emmental', category: fromages, stockcurrent: stock, pricebuy: 4, pricesell: 5)
   if Product.find_by(name: 'emmental') == nil
@@ -185,6 +126,7 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'emmental').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + f.pricebuy, units: stock.units + 1)
 
   g = Product.new(name: 'cheddar', category: fromages, stockcurrent: stock, pricebuy: 1, pricesell: 2)
   if Product.find_by(name: 'cheddar') == nil
@@ -192,10 +134,14 @@ CompanyCategory.create(company: c, category: fromages)
   else
     Product.find_by(name: 'cheddar').update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
   end
+  stock.update(total: stock.total + g.pricebuy, units: stock.units + 1)
 
 end
-supplier = Company.create(name: 'supplier', businessline: Businessline.last)
-supplierstock = Stockcurrent.create(company: supplier)
+
+
+supplier = Company.create(name: 'supplier', address: '143, cours Lafayette, Lyon', mobile: '0403020102', businessline: Businessline.last)
+supp = Supplier.create(name: 'supplier', company: supplier)
+supplierstock = Stockcurrent.create(company: supplier, stockmin: 5, stockmax: 150)
 supplier.update(stockcurrent: supplierstock)
 legumessupplier = Category.create(name: 'legumes')
 viandessuppier = Category.create(name: 'viandes')
@@ -251,4 +197,19 @@ if Product.find_by(name: 'cheddar', stockcurrent: supplierstock) == nil
   g.save
 else
   Product.find_by(name: 'cheddar', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
+end
+
+10.times do
+  product = Product.new
+  product.name = Faker::Commerce.product_name
+  product.pricebuy = Faker::Commerce.price
+  product.save
+
+
+
+100.times do
+  purshase = product.purchases.new
+  purshase.purshased_on = Faker::Date.between(from: 1.month.ago,to: Date.today);
+  purshase.purshased_price = product.price * (1 + (([true, false].sample ? -1 : 1) * rand(10)/100))
+  purshase.save
 end

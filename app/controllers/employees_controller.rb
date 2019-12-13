@@ -34,6 +34,7 @@ class EmployeesController < ApplicationController
     )
     if @user.save
       flash[:success] = 'A new employee was add to your company'
+      UserMailer.welcome_employee(@user).deliver_now
       redirect_to employees_path
     else
       flash[:error] = @user.errors.full_message.to_sentence

@@ -2,7 +2,7 @@ class PurshasController < ApplicationController
   before_action -> { as_access?("Purshas") }
 
   def index
-    @categories = Company.last.categories.all
+    @categories = Supplier.first.company.categories.all
     @memory = current_user.memory
     @globalprice = 0
     current_user.memory.ticketlines.each do |ticketline|

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def as_access?(screen_name)
     current_user.role.screens.each do |screen|
       if screen.name == screen_name
-        return true
+        return true 
       end
     end
     redirect_to root_path

@@ -5,7 +5,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :logo
       t.string :mobile
-      t.integer :capital
+      t.integer :capital, default: 0
       t.belongs_to :businessline, index: true
       t.belongs_to :stockcurrent
       t.timestamps

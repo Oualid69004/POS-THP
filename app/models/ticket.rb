@@ -1,7 +1,5 @@
 class Ticket < ApplicationRecord
-      
-  
-    belongs_to :company, optional: true
+    belongs_to :company
     has_many :users
     has_many :customers
     has_many :ticketlines
@@ -9,7 +7,7 @@ class Ticket < ApplicationRecord
     belongs_to :receipt, optional: true
 
     def self.purshas(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 1)
       globalprice = 0
       current_user.memory.ticketlines.each do |ticketline|
         quantity = ticketline.units.to_i
@@ -24,12 +22,13 @@ class Ticket < ApplicationRecord
         end
         ticketline.update(ticket: @ticket, memory: nil, price: ticketline_price)
         current_user.company.update(capital: (current_user.company.capital -= ticketline_price.to_i))
+        current_user.company.stockcurrent.update(total: current_user.company.stockcurrent.total + ticketline_price, units: current_user.company.stockcurrent.units + quantity)
       end
       @ticket.update(ticketTotal: globalprice)
     end
 
     def self.sales(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 2)
       globalprice = 0
       current_user.memory_sale.ticketlines.each do |ticketline|
         ticketline_price = ticketline.product.pricesell.to_i * ticketline.units.to_i
@@ -42,6 +41,7 @@ class Ticket < ApplicationRecord
         end
         ticketline.update(ticket: @ticket, memory_sale: nil, price: ticketline_price)
         current_user.company.update(capital: (current_user.company.capital += ticketline_price))
+        current_user.company.stockcurrent.update(total: current_user.company.stockcurrent.total - ticketline_price, units: current_user.company.stockcurrent.units - ticketline.units.to_i)
       end
       @ticket.update(ticketTotal: globalprice)
     end

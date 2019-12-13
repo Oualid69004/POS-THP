@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action -> { as_access?("Business Lines") }
+  before_action -> { as_access?("Products") }
 
   # GET /products
   # GET /products.json
   def index
     @products = current_user.company.stockcurrent.products
-    @categories =Category.all
+    @categories = current_user.company.categories
   end
   # GET /products/1
   # GET /products/1.json
@@ -33,12 +33,14 @@ class ProductsController < ApplicationController
       category: Category.find(params[:category]),
       stockcurrent: current_user.company.stockcurrent
     )
-    if Product.find_by(name: params[:name]) == nil
+    if Product.find_by(name: params[:name], category: Category.find(params[:category])) == nil
       product.save
       flash[:success] = "The new product #{params[:name]} was added to your stock"
+      current_user.company.stockcurrent.update(units: current_user.company.stockcurrent.units + params[:stockvolume].to_i)
     else
       Product.find_by(name: params[:name]).update(stockvolume: Product.find_by(name: params[:name]).stockvolume + params[:stockvolume].to_i)
       flash[:success] = "The quantity of #{params[:name]} was succesfully updated"
+      current_user.company.stockcurrent.update(units: current_user.company.stockcurrent.units + params[:stockvolume].to_i)
     end
     redirect_to products_path
   end
