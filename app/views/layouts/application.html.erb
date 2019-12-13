@@ -133,7 +133,7 @@
                 <h6 class="collapse-header">Login Screens:</h6>
                 <%= link_to 'Payment out', paymentout_index_path, class: "collapse-item" %>
                 <%= link_to 'Payment in', paymentin_index_path, class: "collapse-item" %>
-                <%= link_to 'ClosedCash', root_path, class: "collapse-item" %>
+                <%= link_to ' Global receipt', receipts_path, class: "collapse-item" %>
               </div>
             </div>
           </li>
@@ -218,7 +218,7 @@
                   <%end%>
                    <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
                       <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Settings
+                      Update account
                     <%end%>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -257,7 +257,10 @@
 
       </div>
       <!-- End of Page Wrapper -->
-      </div>
+
+
+
+
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

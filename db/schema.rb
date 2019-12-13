@@ -145,10 +145,11 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
 
   create_table "receipts", force: :cascade do |t|
     t.string "reference_receipt"
-    t.bigint "ticket_id"
+    t.float "value", default: 0.0
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id"], name: "index_receipts_on_ticket_id"
+    t.index ["company_id"], name: "index_receipts_on_company_id"
   end
 
   create_table "rolepermissions", force: :cascade do |t|

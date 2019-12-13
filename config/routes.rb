@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :memory, only: [:destroy]
   resources :purshas
   resources :sales
-  resources :receipts
+  resources :receipts, only: [:index]
   resources :paymentsuppliers
   resources :payments
   resources :stockcurrents
@@ -26,7 +26,6 @@ Rails.application.routes.draw do
   resources :screens
   resources :rolepermissions
   resources :roles
-  #resources :employeebranches
   resources :employees
   resources :customers
   resources :suppliers

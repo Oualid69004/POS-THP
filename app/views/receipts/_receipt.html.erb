@@ -1,0 +1,59 @@
+<div class="modal-header">
+<%= link_to 'Print Ticket', '#', :onclick => 'window.print();return false;', class: 'modal-title', id: 'exampleModalLabel'%>
+</div>
+<div class="modal-body">
+  <div class="my-5" id="section-to-print">
+      <div class="row">
+          <div class="well col-xs-10 col-sm-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-3 bg-tickets mx-auto">
+              <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                      <address>
+                          <strong><%= @receipts.company.name %></strong>
+                          <br>
+                          2135 Sunset Blvd
+                          <br>
+                          Los Angeles, CA 90026
+                          <br>
+                          <abbr title="Phone">P:</abbr> (213) 484-6829
+                      </address>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                      <p>
+                          <em>Date: <%= @receipts.created_at %></em>
+                      </p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="text-center">
+                      <h1>Receipt</h1>
+                  </div>
+                  </span>
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>ticket</th>
+                              <th>price</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <%@receipts.tickets.each do |ticket| %>
+                          <tr>
+                              <td class="col-md-6"><em>ticket number : <%=ticket.ticketid%></em></h4></td>
+                              <% if ticket.tickettype == 'sales' %>
+                              <td class="col-md-2 text-center">- <%=ticket.ticketTotal%></td>
+                              <% else %>
+                              <td class="col-md-2 text-center"> <%=ticket.ticketTotal%></td>
+                              <%end%>
+                          </tr>
+                        <% end %>
+                          <tr>
+                              <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                              <td class="text-center text-danger"><h4><strong><%= @receipts.value %>€</strong></h4></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

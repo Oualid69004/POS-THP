@@ -6,6 +6,9 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#reportModal"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
         </div>
+
+
+
           <!-- Content Row -->
           <div class="row">
             <!-- Earnings (Monthly) Card Example -->
@@ -66,21 +69,7 @@
               </div>
             </div>
             <!-- Pending Requests Card Example -->
-            <div hidden class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
@@ -113,7 +102,6 @@
                     <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @stock_percent %>%" aria-valuenow="<%= @stock_percent %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-              </div>
               <% elsif @stock_percent <= @stock.warning_threshold %>
               <div class="card-body">
                 <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock_percent.to_i %>%</span></h4>
@@ -121,7 +109,6 @@
                   <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @stock_percent %>%" aria-valuenow="<%= @stock_percent %>" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
-            </div>
             <% else %>
             <div class="card-body">
               <h4 class="small font-weight-bold"> <span class="float-right"><%= @stock_percent.to_i %>%</span></h4>
