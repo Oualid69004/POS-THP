@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-    validates :name, :pricesell, :pricebuy, :stockvolume, :reference,  :presence => true
+    # validates :name, :pricesell, :pricebuy, :stockvolume, :reference,  :presence => true
   
   
     has_many :typeproducts
