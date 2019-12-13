@@ -35,7 +35,7 @@
   <!-- Masthead -->
   <header class="masthead text-white text-center">
     <div class="overlay"clip-path: inset(5% 20%% 0 10%); ></div>
-  
+
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
@@ -47,7 +47,7 @@
               <div class="col-12 col-md-9 mb-2 mb-md-0">
               </div>
               <div class="col-12 col-md-3">
-                <center><button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button></center>
+                <center><%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-block btn-lg btn-primary' %></center>
               </div>
             </div>
           </form>
@@ -96,21 +96,21 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('profile.png') %>');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('das.png') %>');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Fully Responsive Design</h2>
           <p class="lead mb-0">When you use our website, you know that the webpage will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('<%= asset_path('purshas.png') %>');"></div>
         <div class="col-lg-6 my-auto showcase-text">
           <h2>Come on and sign up !</h2>
           <p class="lead mb-0">Newly improved, and full of great utility features, POSThp is leading the way in mobile responsive web development! Our developers added news functions to the Website. </p>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('stock.png') %>');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Easy to manage your employees, your suppliers and your customers! Let's Sign up and join our website </h2>
           <p class="lead mb-0"></p>
@@ -126,21 +126,21 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjW3YDLt7DmAhXK4IUKHaVvCscQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.indigo-capital.fr%2Fen%2Ffwp_portfolio%2Fsonia-pelisson-2%2F&psig=AOvVaw2f_aoi49fmK2496kGm3Y4q&ust=1576251203264376" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-1.jpg') %>" alt="">
             <h5>Margaret E.</h5>
             <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-2.jpg') %>" alt="">
             <h5>Fred S.</h5>
             <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="<%= asset_path('testimonials-3.jpg') %>" alt="">
             <h5>Sarah W.</h5>
             <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
           </div>
@@ -158,13 +158,13 @@
           <h2 class="mb-4">Ready to get started? Sign up now!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-         
+
              <div class="form-row">
-            <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+               <%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-block btn-lg btn-primary' %>
               </div>
             </div>
-        
-        </div> 
+
+        </div>
       </div>
     </div>
   </section>
