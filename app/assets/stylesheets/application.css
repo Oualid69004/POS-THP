@@ -12,38 +12,21 @@
  *
  *= require_tree .
  *= require_self
- *= require fontawesome-free/css/all.min
- *= require assets/stylesheets/sb-admin-2.min
- *= require datatables/dataTables.bootstrap4.min
-  *= require assets/stylesheets/landing-page.min.css
-  *= require simple-line-icons/css/simple-line-icons
-  *= require fontawesome-free/css/bootstrap
+   *= require fontawesome-free/css/bootstrap
   *= require fontawesome-free/css/animate
   *= require fontawesome-free/css/responsive
   *= require fontawesome-free/css/fontawesome.min
   *= require fontawesome-free/css/linecons
   *= require fontawesome-free/css/style
   *= require fontawesome-free/css/bootstrap
+ *= require fontawesome-free/css/all.min
+ *= require assets/stylesheets/sb-admin-2.min
+ *= require datatables/dataTables.bootstrap4.min
+  *= require assets/stylesheets/landing-page.min.css
+  *= require simple-line-icons/css/simple-line-icons
+ 
 
 
 
 
- */
-
-.bg-tickets{
-  background-color: #E9E9E9;
-}
-
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #section-to-print, #section-to-print * {
-    visibility: visible;
-  }
-  #section-to-print {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-}
+ 
