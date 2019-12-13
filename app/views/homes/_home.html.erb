@@ -31,35 +31,7 @@
 	<script type="text/javascript" src="js/wow.js"></script>
 	<script type="text/javascript" src="js/classie.js"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function(e) {
-			$('.res-nav_click').click(function() {
-				$('ul.toggle').slideToggle(600)
-			});
 
-			$(document).ready(function() {
-				$(window).bind('scroll', function() {
-					if ($(window).scrollTop() > 0) {
-						$('#header_outer').addClass('fixed');
-					} else {
-						$('#header_outer').removeClass('fixed');
-					}
-				});
-
-			});
-
-
-		});
-
-		function resizeText() {
-			var preferredWidth = 767;
-			var displayWidth = window.innerWidth;
-			var percentage = displayWidth / preferredWidth;
-			var fontsizetitle = 25;
-			var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
-			$(".divclass").css("font-size", newFontSizeTitle)
-		}
-	</script>
 </head>
 
 <body>
@@ -73,7 +45,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light nav-link ">
         <h5><%=link_to 'POSThp', homes_path, class:"navbar-brand" %></h5>
    <div class="container ">
-      <div> <%=link_to 'Sign Out', new_user_registration_path, class:"btn btn-right btn-lg btn-primary pull-right ml-md-3"%>
+      <div> <%=link_to 'Sign Up', new_user_registration_path, class:"btn btn-right btn-lg btn-primary pull-right ml-md-3"%>
         </div>
 
 </div>
@@ -121,11 +93,6 @@ $
      <div class="row">
     
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-         
-             <div class="form-row">
-         <%=link_to 'See the demo!', new_user_registration_path, class:"btn btn-block btn-lg btn-primary"%></center>
-      
-              </div>
                <div class="col-xl-9 mx-auto">
           <h2 class="mb-4">Ready to get started? Sign up now!</h2>
         </div>
@@ -161,12 +128,7 @@ $
             <p class="font-weight-light mb-0">"All of the features POSThp provides are working great in my stores. It's very useful and reliable in our everyday transactions."</p>
           </div>
         </div>
-       
-        <div class="col-lg-">
-          <div class="mx-auto mb-5 mb-lg-2">
-                <div> <%=link_to 'See the demo!', new_user_registration_path, class:"btn btn-right btn-lg btn-primary pull-right  "%></center>
-
-          </div>
+    
         </div>
         
     </div>
@@ -191,129 +153,8 @@ $
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Butterfly
           -->
 					
-	<script type="text/javascript">
-		$(document).ready(function(e) {
-			$('#header_outer').scrollToFixed();
-			$('.res-nav_click').click(function() {
-				$('.main-nav').slideToggle();
-				return false
-
-			});
-
-		});
-	</script>
-	<script>
-		wow = new WOW({
-			animateClass: 'animated',
-			offset: 100
-		});
-		wow.init();
-		document.getElementById('').onclick = function() {
-			var section = document.createElement('section');
-			section.className = 'wow fadeInDown';
-			section.className = 'wow shake';
-			section.className = 'wow zoomIn';
-			section.className = 'wow lightSpeedIn';
-			this.parentNode.insertBefore(section, this);
-		};
-	</script>
-	<script type="text/javascript">
-		$(window).load(function() {
-
-			$('a').bind('click', function(event) {
-				var $anchor = $(this);
-
-				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top - 91
-				}, 1500, 'easeInOutExpo');
-				/*
-				if you don't want to use the easing effects:
-				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top
-				}, 1000);
-				*/
-				event.preventDefault();
-			});
-		})
-	</script>
-
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			// Portfolio Isotope
-			var container = $('#portfolio-wrap');
 
 
-			container.isotope({
-				animationEngine: 'best-available',
-				animationOptions: {
-					duration: 200,
-					queue: false
-				},
-				layoutMode: 'fitRows'
-			});
-
-			$('#filters a').click(function() {
-				$('#filters a').removeClass('active');
-				$(this).addClass('active');
-				var selector = $(this).attr('data-filter');
-				container.isotope({
-					filter: selector
-				});
-				setProjects();
-				return false;
-			});
-
-
-			function splitColumns() {
-				var winWidth = $(window).width(),
-					columnNumb = 1;
-
-
-				if (winWidth > 1024) {
-					columnNumb = 4;
-				} else if (winWidth > 900) {
-					columnNumb = 2;
-				} else if (winWidth > 479) {
-					columnNumb = 2;
-				} else if (winWidth < 479) {
-					columnNumb = 1;
-				}
-
-				return columnNumb;
-			}
-
-			function setColumns() {
-				var winWidth = $(window).width(),
-					columnNumb = splitColumns(),
-					postWidth = Math.floor(winWidth / columnNumb);
-
-				container.find('.portfolio-item').each(function() {
-					$(this).css({
-						width: postWidth + 'px'
-					});
-				});
-			}
-
-			function setProjects() {
-				setColumns();
-				container.isotope('reLayout');
-			}
-
-			container.imagesLoaded(function() {
-				setColumns();
-			});
-
-
-			$(window).bind('resize', function() {
-				setProjects();
-			});
-
-		});
-		$(window).load(function() {
-			jQuery('#all').click();
-			return false;
-		});
-	</script>
-
+	
 </body>
 </html>
