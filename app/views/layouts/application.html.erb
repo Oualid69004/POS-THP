@@ -65,7 +65,7 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Titre for security</h6>
+                <h6 class="collapse-header">Security Management</h6>
                 <%= link_to 'Users', employees_path, class: "collapse-item" %>
                 <%= link_to 'Roles', roles_path, class: "collapse-item" %>
                 <%= link_to 'Permissions', new_rolepermission_path, class: "collapse-item" %>
@@ -91,7 +91,7 @@
             </a>
             <div id="collapseProducts" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Titre products:</h6>
+                <h6 class="collapse-header">Products Management:</h6>
                 <%= link_to 'Products', products_path, class: "collapse-item" %>
                 <%= link_to 'Categories', categories_path, class: "collapse-item" %>
 
@@ -107,17 +107,12 @@
             </a>
             <div id="collapseServices" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
+                <h6 class="collapse-header">Service pages</h6>
                <%= link_to 'Supliers', suppliers_path, class: "collapse-item" %>
                <%= link_to 'Customers', customers_path, class: "collapse-item" %>
                <%= link_to 'Stock Management', edit_stockcurrent_path(current_user.company.stockcurrent), class: "collapse-item" %>
                <%= link_to 'Purchas', purshas_path, class: "collapse-item" %>
                <%= link_to 'Sales', sales_path, class: "collapse-item" %>
-                <% if current_user.role.name == 'admin' %>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">admin</h6>
-                <%= link_to 'Edit Sales', root_path, class: "collapse-item" %>
-                <% end %>
               </div>
             </div>
           </li>
@@ -130,7 +125,7 @@
             </a>
             <div id="collapsePayments" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
+                <h6 class="collapse-header">Payments Report</h6>
                 <%= link_to 'Payment out', paymentout_index_path, class: "collapse-item" %>
                 <%= link_to 'Payment in', paymentin_index_path, class: "collapse-item" %>
                 <%= link_to ' Global receipt', receipts_path, class: "collapse-item" %>
