@@ -46,13 +46,17 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
+
+
             </article>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+
                     data-description="supplier command"
                     data-amount="<%= @globalprice * 100 %>"
                     data-locale="auto"
                     data-currency="eur"></script>
+
           <%= link_to 'Reset', memory_path(@memory.id), class:'btn btn-danger px-4', data: {method: :delete, confirm: 'Delete all products of your list ?', params: {:from => 1}.to_param} %>
           <% end %>
         </div>

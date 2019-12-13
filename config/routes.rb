@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :static_page, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :users, only: [:show]
   resources :paymentin, only: [:index]
   resources :paymentout, only: [:index]
   resources :memory_sale, only: [:destroy]

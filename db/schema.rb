@@ -143,6 +143,22 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.index ["ticketline_id"], name: "index_products_on_ticketline_id"
   end
 
+  create_table "puchase", force: :cascade do |t|
+    t.integer "product_id"
+    t.date "purchased_on"
+    t.float "purchased_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purshases", force: :cascade do |t|
+    t.integer "product_id"
+    t.date "purshased_on"
+    t.float "purshased_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "receipts", force: :cascade do |t|
     t.string "reference_receipt"
     t.float "value", default: 0.0

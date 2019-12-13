@@ -1,7 +1,9 @@
 class Company < ApplicationRecord
     after_create :create_receipt
 
-   # validates :name, :address, :mobile, :presence => true
+
+    # validates :name, :address, :mobile, :presence => true
+
     belongs_to :businessline
     has_many :branches
     has_many :customers

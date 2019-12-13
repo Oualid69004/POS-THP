@@ -198,3 +198,18 @@ if Product.find_by(name: 'cheddar', stockcurrent: supplierstock) == nil
 else
   Product.find_by(name: 'cheddar', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
 end
+
+10.times do
+  product = Product.new
+  product.name = Faker::Commerce.product_name
+  product.pricebuy = Faker::Commerce.price
+  product.save
+
+
+
+100.times do
+  purshase = product.purchases.new
+  purshase.purshased_on = Faker::Date.between(from: 1.month.ago,to: Date.today);
+  purshase.purshased_price = product.price * (1 + (([true, false].sample ? -1 : 1) * rand(10)/100))
+  purshase.save
+end
