@@ -17,6 +17,17 @@
  *= require datatables/dataTables.bootstrap4.min
   *= require assets/stylesheets/landing-page.min.css
   *= require simple-line-icons/css/simple-line-icons
+  *= require fontawesome-free/css/bootstrap
+  *= require fontawesome-free/css/animate
+  *= require fontawesome-free/css/responsive
+  *= require fontawesome-free/css/fontawesome.min
+  *= require fontawesome-free/css/linecons
+  *= require fontawesome-free/css/style
+  *= require fontawesome-free/css/bootstrap
+
+
+
+
  */
 
 .bg-tickets{

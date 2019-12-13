@@ -19,3 +19,20 @@
 //= require bootstrap/js/bootstrap.min
 //= require jquery-easing/jquery.easing.min
 //= require assets/javascripts/sb-admin-2.min
+//= require bootstrap/js/bootstrap
+//= require bootstrap/js/classie
+//= require bootstrap/js/jquery-scrolltofixed
+//= require bootstrap/js/jquery.1.8.3.min
+//= require bootstrap/js/jquery.easing.1.3
+//= require bootstrap/js/jquery.isotope
+//= require bootstrap/js/wow
+
+
+
+
+
+
+
+
+
+

@@ -1,187 +1,319 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<title>Homepage</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/linecons.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" type="text/css">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,700italic,400italic,300italic,300,100italic,100,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
+
+	<!-- =======================================================
+    Theme Name: Butterfly
+    Theme URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+	======================================================= -->
+
+	<script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.isotope.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/classie.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			$('.res-nav_click').click(function() {
+				$('ul.toggle').slideToggle(600)
+			});
+
+			$(document).ready(function() {
+				$(window).bind('scroll', function() {
+					if ($(window).scrollTop() > 0) {
+						$('#header_outer').addClass('fixed');
+					} else {
+						$('#header_outer').removeClass('fixed');
+					}
+				});
+
+			});
 
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		});
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template -->
-  <link href="css/landing-page.min.css" rel="stylesheet">
-
+		function resizeText() {
+			var preferredWidth = 767;
+			var displayWidth = window.innerWidth;
+			var percentage = displayWidth / preferredWidth;
+			var fontsizetitle = 25;
+			var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
+			$(".divclass").css("font-size", newFontSizeTitle)
+		}
+	</script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <%=link_to 'POSThp', homes_path, class:"navbar-brand" %>
-       <%=link_to 'Sign In', user_session_path, class:"btn btn-primary" %>
-    </div>
+
+	<!--Top_content-->
+	 <!-- Navigation -->
+
+     
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav-link ">
+        <h5><%=link_to 'POSThp', homes_path, class:"navbar-brand" %></h5>
+   <div class="container ">
+      <div> <%=link_to 'Sign Out', new_user_registration_path, class:"btn btn-right btn-lg btn-primary pull-right ml-md-3"%>
+        </div>
+
+</div>
   </nav>
 
-  <!-- Masthead -->
-  <header class="masthead text-white text-center">
-    <div class="overlay"clip-path: inset(5% 20%% 0 10%); ></div>
   
+
+
+	<!--Service-->
+	<section id="service">
+		<div class="container">
+			<h2>Services</h2>
+			<div class="service_area">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="service_block">
+							<div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa-flash"></i></span> </div>
+							<h3 class="animated fadeInUp wow">Fully Responsive</h3>
+							<p class="animated fadeInDown wow">This website will look great on any device, no matter the size! PHP POS can be accessed via multiple devices, including desktops, laptops and smartphones and users can operate it across multiple retail locations.  </p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="service_block">
+							<div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa-comments"></i></span> </div>
+							<h3 class="animated fadeInUp wow">Manage your business</h3>
+							<p class="animated fadeInDown wow">POSThp offers many great features such as inventory options, service/product separation, reporting options and many more. It has a clean interface and is an overall quite intuitive website. .</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="service_block">
+							<div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa-shield"></i></span> </div>
+							<h3 class="animated fadeInUp wow">top Security</h3>
+							<p class="animated fadeInDown wow">With the inventory management feature, users can add items to their list of available stock and track sales.  </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+<!-- website -->
+<section class="call-to-action text-white text-center">
+$
     <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Manage your business more easily!</h1>
-        </div>
+     <div class="row">
+    
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
+         
+             <div class="form-row">
+         <%=link_to 'See the demo!', new_user_registration_path, class:"btn btn-block btn-lg btn-primary"%></center>
+      
               </div>
-              <div class="col-12 col-md-3">
-                <center><button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button></center>
-              </div>
+               <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        </div>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
-            </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This website will look great on any device, no matter the size!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Manage your business</h3>
-            <p class="lead mb-0">Featuring the latest build of the new website</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
-            </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use for your team and employees</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Image Showcases -->
-  <section class="showcase">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%= asset_path('profile.png') %>');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use our website, you know that the webpage will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <h2>Come on and sign up !</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility features, POSThp is leading the way in mobile responsive web development! Our developers added news functions to the Website. </p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Easy to manage your employees, your suppliers and your customers! Let's Sign up and join our website </h2>
-          <p class="lead mb-0"></p>
-        </div>
-      </div>
+        
+        </div> 
+   
     </div>
   </section>
 
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
-    <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
+
       <div class="row">
         <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjW3YDLt7DmAhXK4IUKHaVvCscQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.indigo-capital.fr%2Fen%2Ffwp_portfolio%2Fsonia-pelisson-2%2F&psig=AOvVaw2f_aoi49fmK2496kGm3Y4q&ust=1576251203264376" alt="">
+          <div class="testimonial-item mx-auto mb-12 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-12" src="https://cdn.pixabay.com/photo/2015/03/03/18/58/girl-657753_1280.jpg" alt="">
             <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much, it's so easy to manage my business!"</p>
           </div>
         </div>
-        <div class="col-lg-4">
+         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="https://cdn.pixabay.com/photo/2014/09/17/11/47/man-449404_1280.jpg" alt="">
             <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            <p class="font-weight-light mb-0">"One of the great pos is POSThp. This has been our pos for years now and done a lot of help for my business success.!"</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_1280.jpg" alt="">
             <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            <p class="font-weight-light mb-0">"All of the features POSThp provides are working great in my stores. It's very useful and reliable in our everyday transactions."</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+       
+        <div class="col-lg-">
+          <div class="mx-auto mb-5 mb-lg-2">
+                <div> <%=link_to 'See the demo!', new_user_registration_path, class:"btn btn-right btn-lg btn-primary pull-right  "%></center>
 
-  <!-- Call to Action -->
-    <section class="call-to-action text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-     <div class="row">
-    <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+          </div>
         </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-         
-             <div class="form-row">
-            <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
         
-        </div> 
-      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  
+
+
+
+	<!-- Footer -->
   <footer class="sticky-footer bg-white">
             <div class="container my-auto">
               <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
+                <h5>Copyright &copy; Your Website 2019</h5>
               </div>
             </div>
           </footer>
+					<!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Butterfly
+          -->
+					
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			$('#header_outer').scrollToFixed();
+			$('.res-nav_click').click(function() {
+				$('.main-nav').slideToggle();
+				return false
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			});
+
+		});
+	</script>
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 100
+		});
+		wow.init();
+		document.getElementById('').onclick = function() {
+			var section = document.createElement('section');
+			section.className = 'wow fadeInDown';
+			section.className = 'wow shake';
+			section.className = 'wow zoomIn';
+			section.className = 'wow lightSpeedIn';
+			this.parentNode.insertBefore(section, this);
+		};
+	</script>
+	<script type="text/javascript">
+		$(window).load(function() {
+
+			$('a').bind('click', function(event) {
+				var $anchor = $(this);
+
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 91
+				}, 1500, 'easeInOutExpo');
+				/*
+				if you don't want to use the easing effects:
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000);
+				*/
+				event.preventDefault();
+			});
+		})
+	</script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			// Portfolio Isotope
+			var container = $('#portfolio-wrap');
+
+
+			container.isotope({
+				animationEngine: 'best-available',
+				animationOptions: {
+					duration: 200,
+					queue: false
+				},
+				layoutMode: 'fitRows'
+			});
+
+			$('#filters a').click(function() {
+				$('#filters a').removeClass('active');
+				$(this).addClass('active');
+				var selector = $(this).attr('data-filter');
+				container.isotope({
+					filter: selector
+				});
+				setProjects();
+				return false;
+			});
+
+
+			function splitColumns() {
+				var winWidth = $(window).width(),
+					columnNumb = 1;
+
+
+				if (winWidth > 1024) {
+					columnNumb = 4;
+				} else if (winWidth > 900) {
+					columnNumb = 2;
+				} else if (winWidth > 479) {
+					columnNumb = 2;
+				} else if (winWidth < 479) {
+					columnNumb = 1;
+				}
+
+				return columnNumb;
+			}
+
+			function setColumns() {
+				var winWidth = $(window).width(),
+					columnNumb = splitColumns(),
+					postWidth = Math.floor(winWidth / columnNumb);
+
+				container.find('.portfolio-item').each(function() {
+					$(this).css({
+						width: postWidth + 'px'
+					});
+				});
+			}
+
+			function setProjects() {
+				setColumns();
+				container.isotope('reLayout');
+			}
+
+			container.imagesLoaded(function() {
+				setColumns();
+			});
+
+
+			$(window).bind('resize', function() {
+				setProjects();
+			});
+
+		});
+		$(window).load(function() {
+			jQuery('#all').click();
+			return false;
+		});
+	</script>
 
 </body>
-
 </html>
