@@ -1,5 +1,5 @@
 class PaymentoutController < ApplicationController
   def index
-    @tickets = Ticket.where(tickettype: 'purshas').all
+    @tickets = current_user.company.tickets.where(tickettype: 'purshas').all
   end
 end

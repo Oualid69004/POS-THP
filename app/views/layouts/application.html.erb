@@ -13,9 +13,9 @@
 
   <body>
 
-    <% unless current_page?(new_static_page_path) || !user_signed_in? || current_page?(homes_path)  %>
+    <% unless current_page?(new_static_page_path) || !user_signed_in? || current_page?(homes_path) %>
 
-    <div id="page-top">
+  <div id="page-top">
 
       <!-- Page Wrapper -->
       <div id="wrapper">
@@ -220,10 +220,6 @@
                       <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                       Settings
                     <%end%>
-                   <%= link_to root_path, class: "dropdown-item" do %>
-                      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Activity Log
-                    <%end%>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -243,6 +239,7 @@
               <%= yield %>
             </div>
             <!-- /.container-fluid -->
+            </div>
           <!-- End of Main Content -->
 
           <!-- Footer -->
@@ -260,7 +257,7 @@
 
       </div>
       <!-- End of Page Wrapper -->
-
+      </div>
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -309,4 +306,3 @@
     <% end %>
   </body>
 </html>
-

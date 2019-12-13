@@ -1,7 +1,5 @@
 class Ticket < ApplicationRecord
-
-
-    belongs_to :company, optional: true
+    belongs_to :company
     has_many :users
     has_many :customers
     has_many :ticketlines
@@ -9,7 +7,7 @@ class Ticket < ApplicationRecord
     belongs_to :receipt, optional: true
 
     def self.purshas(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 1)
       globalprice = 0
       current_user.memory.ticketlines.each do |ticketline|
         quantity = ticketline.units.to_i
@@ -30,7 +28,7 @@ class Ticket < ApplicationRecord
     end
 
     def self.sales(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15))
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 2)
       globalprice = 0
       current_user.memory_sale.ticketlines.each do |ticketline|
         ticketline_price = ticketline.product.pricesell.to_i * ticketline.units.to_i

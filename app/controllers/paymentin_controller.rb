@@ -1,6 +1,5 @@
 class PaymentinController < ApplicationController
   def index
-    @tickets = Ticket.where(tickettype: 'sales').all
-    @receipt = Receipt.all
+    @tickets = current_user.company.tickets.where(tickettype: 'sales').all
   end
 end

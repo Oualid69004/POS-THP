@@ -253,7 +253,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "discount"
-    t.string "status"
+    t.integer "status"
     t.string "ticketCost"
     t.date "ticketDate"
     t.string "ticketNumber"

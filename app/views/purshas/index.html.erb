@@ -38,7 +38,8 @@
         <div class="text-right">
           <h4>Total : </h4>
           <h3><span id="globalprice"><%= @globalprice %></span> €</h3>
-          <%= form_tag ticketlines_path do %>
+
+          <%= form_tag ticketlines_path(:price => @globalprice) do %>
             <article>
               <% if flash[:error].present? %>
                 <div id="error_explanation">
@@ -48,10 +49,10 @@
             </article>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
-                    data-amount="<%= @globalprice / 100 %>"
-                    data-locale="auto"></script>
-          <%= link_to 'paye',  ticketlines_path, data: {method: :post}%>
+                    data-description="supplier command"
+                    data-amount="<%= @globalprice * 100 %>"
+                    data-locale="auto"
+                    data-currency="eur"></script>
           <%= link_to 'Reset', memory_path(@memory.id), class:'btn btn-danger px-4', data: {method: :delete, confirm: 'Delete all products of your list ?', params: {:from => 1}.to_param} %>
           <% end %>
         </div>
