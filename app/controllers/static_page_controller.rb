@@ -15,15 +15,7 @@ class StaticPageController < ApplicationController
     end
     @stock_percent = @stock_volume.to_f / (@stock.stockmax.to_f - @stock.stockmin.to_f) * 100
     @margin = pricesell - @stock_value
-    @sales_tickets = 0
-    @purshas_tickets = 0
-    current_user.company.tickets.where(tickettype: 'sales').each do |ticket|
-      @sales_tickets = @sales_tickets + ticket.ticketTotal
-    end
-    current_user.company.tickets.where(tickettype: 'purshas').each do |ticket|
-      @purshas_tickets = @purshas_tickets - ticket.ticketTotal
-    end
-    @receipt = @purshas_tickets + @sales_tickets
+    @receipt = current_user.company.receipts.last.value
   end
 
   def new

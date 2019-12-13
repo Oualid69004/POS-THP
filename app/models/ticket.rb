@@ -7,11 +7,12 @@ class Ticket < ApplicationRecord
     belongs_to :receipt, optional: true
 
     def self.purshas(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 1)
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'purshas', ticketid: Faker::Alphanumeric.alpha(number: 15), receipt: current_user.company.receipts.last)
       globalprice = 0
       current_user.memory.ticketlines.each do |ticketline|
         quantity = ticketline.units.to_i
         ticketline_price = ticketline.product.pricebuy.to_i * quantity
+        current_user.company.receipts.last.update(value: current_user.company.receipts.last.value - ticketline_price)
         globalprice += ticketline_price
         category = current_user.company.categories.where(name: ticketline.product.category.name).first
         product = Product.new(name: ticketline.product.name, category: category, stockcurrent: current_user.company.stockcurrent, pricebuy: ticketline.product.pricebuy, pricesell: ticketline.product.pricesell.to_i+1, stockvolume: ticketline.units)
@@ -28,10 +29,11 @@ class Ticket < ApplicationRecord
     end
 
     def self.sales(current_user)
-      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15), status: 2)
+      @ticket = Ticket.create(company: current_user.company, tickettype: 'sales', ticketid: Faker::Alphanumeric.alpha(number: 15), receipt: current_user.company.receipts.last)
       globalprice = 0
       current_user.memory_sale.ticketlines.each do |ticketline|
         ticketline_price = ticketline.product.pricesell.to_i * ticketline.units.to_i
+        current_user.company.receipts.last.update(value: current_user.company.receipts.last.value + ticketline_price)
         globalprice += ticketline_price
         if ticketline.product.stockvolume == 1
           current_user.company.stockcurrent.products.find(ticketline.product.id).destroy

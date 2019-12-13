@@ -5,6 +5,15 @@ var globalPrice = parseInt(document.getElementById('globalprice').innerHTML);
 document.getElementById('globalprice').innerHTML = globalPrice + productPrice;
 var quantity = parseInt(document.getElementById('quantity-<%=@product.id%>').innerHTML);
 
-if (quantity > 1) {
-  console.log(quantity);
-}
+
+var pressTimer;
+
+$("a").mouseup(function(){
+  clearTimeout(pressTimer);
+  // Clear timeout
+  return false;
+}).mousedown(function(){
+  // Set timeout
+  pressTimer = window.setTimeout(function() { ... Your Code ...},1000);
+  return false;
+});

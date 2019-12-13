@@ -1,4 +1,5 @@
 class Receipt < ApplicationRecord
-    belongs_to :ticket
+    has_many :tickets
     has_many :payments
+    belongs_to :company
 end
