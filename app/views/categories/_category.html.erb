@@ -5,7 +5,7 @@
   <div class="card-header py-3">
     <a class="dropdown-item btn btn-primary" href="category" data-toggle="modal" data-target="#categoryModal">
       <i class="fas fa-user-plus fa-fw mr-2 text-gray-400"></i>
-      Create Product
+      Create Category
     </a>
   </div>
   <div class="card-body">
@@ -17,20 +17,19 @@
             <th>Logo</th>
             <th>Edit</th>
             <th>Destroy</th>
-          
+
           </tr>
         </thead>
-        
+
         <tbody>
           <% @categories.each do |category| %>
           <tr>
             <td><%= category.name %></td>
             <td><%= category.logo %></td>
-            <td></td>
             <td><%= link_to 'Edit', edit_category_path(category) ,class: "btn btn-warning" %></td>
             <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger" %></td>
             </tr>
-       
+
           <% end %>
         </tbody>
       </table>

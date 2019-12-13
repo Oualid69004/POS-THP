@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :homes
-  root 'static_page#index'
+  resources :homes, only: [:index]
+  authenticated :user do
+    root to: "static_page#index"
+  end
+  unauthenticated :user do
+    root to: "homes#index"
+  end
   resources :static_page, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations" }
   resources :paymentin, only: [:index]

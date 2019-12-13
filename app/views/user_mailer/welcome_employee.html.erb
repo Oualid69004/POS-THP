@@ -6,14 +6,10 @@
 <body>
 <h1>Bienvenue chez nous !</h1>
 <p>
-  Vous venez d'etre inscrit  par l'admin de la compagnie <%= current_user.company %>
+  Vous venez d'etre inscrit  par l'admin de la compagnie <%= @company %> qui
   vous a ajouter en tant que collaborateur de la plateforme PosTHP
   en utilisant l’e-mail suivant : <%= @user.email %>
   password : '123456'
-</p>
-<p>
-  Nous vous invitons <strong><a href="<%= edit_user_registration_path %>">changer dès a présent votre mot de passe</a></strong>
-  pour assurer la sécurité de votre compte.
 </p>
 <p> À très vite sur <a href="https://posthp.herokuapp.com/">https://posthp.herokuapp.com/</a> !
 </body>
