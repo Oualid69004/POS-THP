@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "puchase", force: :cascade do |t|
-    t.integer "product_id"
-    t.date "purchased_on"
-    t.float "purchased_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-
   create_table "branches", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -62,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.string "address"
     t.string "logo"
     t.string "mobile"
-    t.integer "capital", default: 0
+    t.integer "capital"
     t.bigint "businessline_id"
     t.bigint "stockcurrent_id"
     t.datetime "created_at", null: false
@@ -134,8 +126,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.float "pricesell"
-    t.float "pricebuy"
+    t.string "pricesell"
+    t.string "pricebuy"
     t.integer "stockvolume", default: 1
     t.string "reference"
     t.float "stockcost"
@@ -149,6 +141,22 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.index ["stockcurrent_id"], name: "index_products_on_stockcurrent_id"
     t.index ["stocklevel_id"], name: "index_products_on_stocklevel_id"
     t.index ["ticketline_id"], name: "index_products_on_ticketline_id"
+  end
+
+  create_table "puchase", force: :cascade do |t|
+    t.integer "product_id"
+    t.date "purchased_on"
+    t.float "purchased_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purshases", force: :cascade do |t|
+    t.integer "product_id"
+    t.date "purshased_on"
+    t.float "purshased_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -186,12 +194,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
   create_table "stockcurrents", force: :cascade do |t|
     t.string "idstockcurrent"
     t.float "cost"
-    t.float "total", default: 0.0
-    t.float "units", default: 0.0
-    t.integer "stockmin", default: 0
-    t.integer "stockmax", default: 1000
-    t.integer "critical_threshold", default: 20
-    t.integer "warning_threshold", default: 50
+    t.float "total"
+    t.float "units"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -292,7 +296,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.index ["memory_sale_id"], name: "index_users_on_memory_sale_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
-
   end
 
 end
