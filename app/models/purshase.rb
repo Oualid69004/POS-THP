@@ -1,4 +1,0 @@
-class Purshase < ApplicationRecord
-   
-
-end

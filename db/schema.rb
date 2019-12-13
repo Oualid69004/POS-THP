@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_120051) do
+ActiveRecord::Schema.define(version: 2019_12_12_121951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_120051) do
     t.string "address"
     t.string "logo"
     t.string "mobile"
-    t.integer "capital"
+    t.integer "capital", default: 0
     t.bigint "businessline_id"
     t.bigint "stockcurrent_id"
     t.datetime "created_at", null: false
@@ -84,6 +84,11 @@ ActiveRecord::Schema.define(version: 2019_12_12_120051) do
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_customers_on_company_id"
     t.index ["ticket_id"], name: "index_customers_on_ticket_id"
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "memories", force: :cascade do |t|
@@ -121,8 +126,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_120051) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "pricesell"
-    t.string "pricebuy"
+    t.float "pricesell"
+    t.float "pricebuy"
     t.integer "stockvolume", default: 1
     t.string "reference"
     t.float "stockcost"
@@ -189,8 +194,12 @@ ActiveRecord::Schema.define(version: 2019_12_12_120051) do
   create_table "stockcurrents", force: :cascade do |t|
     t.string "idstockcurrent"
     t.float "cost"
-    t.float "total"
-    t.float "units"
+    t.float "total", default: 0.0
+    t.float "units", default: 0.0
+    t.integer "stockmin", default: 0
+    t.integer "stockmax", default: 1000
+    t.integer "critical_threshold", default: 20
+    t.integer "warning_threshold", default: 50
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -248,7 +257,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_120051) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "discount"
-    t.string "status"
+    t.integer "status"
     t.string "ticketCost"
     t.date "ticketDate"
     t.string "ticketNumber"
