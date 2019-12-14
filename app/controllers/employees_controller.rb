@@ -37,7 +37,6 @@ class EmployeesController < ApplicationController
       UserMailer.welcome_employee(@user).deliver_now
       redirect_to employees_path
     else
-      flash[:error] = @user.errors.full_message.to_sentence
       redirect_to employees_path
     end
   end
