@@ -13,7 +13,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @url  = 'https://posthp.herokuapp.com'
     @company = current_user.company
-    @mdp = edit_user_password_path
     mail( :to => @user.email,
 
     :subject => 'Your access to PosTHP ' )
