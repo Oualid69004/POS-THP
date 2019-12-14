@@ -11,11 +11,11 @@ class UserMailer < ApplicationMailer
   end
   def welcome_employee(user)
     @user = user
-    @url  = root_path
+    @url  = 'https://posthp.herokuapp.com'
     @company = current_user.company
     @mdp = edit_user_password_path
     mail( :to => @user.email,
 
-    :subject => 'Thanks for signing up for our amazing app ' )
+    :subject => 'Your access to PosTHP ' )
   end
 end
