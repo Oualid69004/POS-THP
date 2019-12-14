@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
     mail( :to => @user.email,
     :subject => 'Thanks for signing up for our amazing app' )
   end
-  def welcome_employee(user)
+  def welcome_employee(user, current_user)
     @user = user
     @url  = 'https://posthp.herokuapp.com'
     @company = current_user.company

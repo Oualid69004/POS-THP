@@ -34,7 +34,7 @@ class EmployeesController < ApplicationController
     )
     if @user.save
       flash[:success] = 'A new employee was add to your company'
-      UserMailer.welcome_employee(@user).deliver_now
+      UserMailer.welcome_employee(@user, current_user).deliver_now
       redirect_to employees_path
     else
       redirect_to employees_path
