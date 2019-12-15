@@ -4,16 +4,7 @@ var productPrice = parseInt(document.getElementById('<%=@product.id%>').innerHTM
 var globalPrice = parseInt(document.getElementById('globalprice').innerHTML);
 document.getElementById('globalprice').innerHTML = globalPrice + productPrice;
 var quantity = parseInt(document.getElementById('quantity-<%=@product.id%>').innerHTML);
-
-
-var pressTimer;
-
-$("a").mouseup(function(){
-  clearTimeout(pressTimer);
-  // Clear timeout
-  return false;
-}).mousedown(function(){
-  // Set timeout
-  pressTimer = window.setTimeout(function() { ... Your Code ...},1000);
-  return false;
-});
+var price = (globalPrice + productPrice) * 100
+document.getElementsByClassName('stripe-button')[0].dataset['amount'] = price;
+document.getElementById("form-stripe").action = '/ticketlines?price=' + price.toString();
+console.log('/ticketlines?price=' + price.toString());

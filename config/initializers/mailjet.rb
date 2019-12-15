@@ -1,6 +1,6 @@
 Mailjet.configure do |config|
-config.api_key = 'a374646fd3d0b32a298b1ccaa843eef8'
-config.secret_key = 'a265b5319545c2779d037f7da1a2486a'
+config.api_key = ENV['MAILJET_PUBLISHABLE_KEY']
+config.secret_key = ENV['MAILJET_SECRET_KEY']
 config.default_from = 'lucas.lensi@gmail.com'
 # Mailjet API v3.1 is at the moment limited to Send API.
 # We’ve not set the version to it directly since there is no other endpoint in that version.

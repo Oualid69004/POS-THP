@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "branches", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -295,4 +296,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_121951) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+=======
+>>>>>>> master
 end

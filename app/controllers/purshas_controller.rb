@@ -20,10 +20,14 @@ class PurshasController < ApplicationController
   end
 
   def create
+    @price = 0
     @product = Product.find(params[:product_id])
+    $price == nil ? $price = params[:price] : $price += params[:price]
+    @globalprice = 0
     @already_here = false
     current_user.memory.ticketlines.each do |ticketline|
       if ticketline.product.name == @product.name
+        @globalprice += ticketline.product.pricebuy.to_i * ticketline.units.to_i
         @already_here = true
         ticketline.update(units: ticketline.units + 1)
       end

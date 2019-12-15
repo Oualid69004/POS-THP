@@ -198,4 +198,3 @@ if Product.find_by(name: 'cheddar', stockcurrent: supplierstock) == nil
 else
   Product.find_by(name: 'cheddar', stockcurrent: supplierstock).update(stockvolume: Product.find_by(name: 'tomates').stockvolume + 1)
 end
-
