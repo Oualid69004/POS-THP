@@ -19,3 +19,4 @@
 //= require bootstrap/js/bootstrap.min
 //= require jquery-easing/jquery.easing.min
 //= require assets/javascripts/sb-admin-2.min
+
